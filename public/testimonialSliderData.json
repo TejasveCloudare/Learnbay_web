@@ -1,0 +1,24 @@
+{
+    "sliderData": [
+        {
+            "personImage": "/people/shravanthi.png",
+            "companyLogo": "/companies/jp-morgan.png"
+        },
+        {
+            "personImage": "/people/person2.png",
+            "companyLogo": "/companies/kpmg.png"
+        },
+        {
+            "personImage": "/people/person3.png",
+            "companyLogo": "/companies/axa.png"
+        },
+        {
+            "personImage": "/people/person4.png",
+            "companyLogo": "/companies/gm.png"
+        },
+        {
+            "personImage": "/people/person5.png",
+            "companyLogo": "/companies/datapoem.png"
+        }
+    ]
+}

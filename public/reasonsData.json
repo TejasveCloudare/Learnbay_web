@@ -1,0 +1,52 @@
+[
+    {
+        "icon": "training_mode.avif",
+        "heading": "Training mode",
+        "description": "You can choose from two flexible training modes to suit your needs and preferences:",
+        "modeItems": [
+            {
+                "icon": "https://cdn-icons-png.flaticon.com/512/759/759497.png",
+                "label": "100% Live\nonline classes"
+            },
+            {
+                "icon": "https://cdn-icons-png.flaticon.com/512/847/847969.png",
+                "label": "Hybrid *\nclasses"
+            }
+        ],
+        "note": "*Important Note: Hybrid mode allows learners to benefit from both flexible, remote learning and direct, face-to-face interaction."
+    },
+    {
+        "icon": "specialize.avif",
+        "heading": "Specialize in your Domain",
+        "description": "Choose from BFSI, Retail, Healthcare, and more for focused, relevant learning.",
+        "keyPoints": [
+            "Manufacturing",
+            "Technology",
+            "Consulting",
+            "Healthcare",
+            "BFSI",
+            "Retail"
+        ]
+    },
+    {
+        "icon": "green_light+(1).avif",
+        "heading": "Real Projects, Real Experience",
+        "description": "Master data science & AI by working on 100+ real-world projects with expert guidance.",
+        "modeItems": [
+            {
+                "comp_icon": "ibm.png",
+                "label": "Get Certification From:"
+            }
+        ]
+    },
+    {
+        "icon": "org_girl+(1).avif",
+        "heading": "Reach your career goals",
+        "description": "Advance your career with our effective Placement Support.",
+        "keyPoints": [
+            "Career Counseling",
+            "Mock Interviews",
+            "Resume Building"
+        ]
+    }
+]

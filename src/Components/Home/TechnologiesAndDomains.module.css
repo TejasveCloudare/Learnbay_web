@@ -1,0 +1,144 @@
+.tdContainer {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+}
+
+.container {
+    text-align: center;
+    background-color: #eaf5ff;
+    padding: 40px 20px;
+    border-radius: 12px;
+    margin: 20px auto;
+    width: 90%;
+    max-width: 1200px;
+}
+
+h2 {
+    font-size: 24px;
+    color: #333;
+    font-weight: 600;
+}
+
+.highlight {
+    color: #007bff;
+}
+
+
+/* Scrolling Slider */
+
+.slider {
+    overflow: hidden;
+    white-space: nowrap;
+    position: relative;
+    margin-top: 20px;
+}
+
+.sliderTrack {
+    display: flex;
+    width: calc(180px * 10);
+    /* Extended width for infinite scrolling */
+}
+
+
+/* Left to Right Animation */
+
+.leftToRight {
+    animation: scrollRight 12s linear infinite;
+}
+
+@keyframes scrollRight {
+    from {
+        transform: translateX(-50%);
+    }
+    to {
+        transform: translateX(0%);
+    }
+}
+
+
+/* Right to Left Animation */
+
+.rightToLeft {
+    animation: scrollLeft 12s linear infinite;
+}
+
+@keyframes scrollLeft {
+    from {
+        transform: translateX(0%);
+    }
+    to {
+        transform: translateX(-50%);
+    }
+}
+
+.slideItem {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 15px;
+    margin: 10px;
+    width: 160px;
+}
+
+.slideItem img {
+    width: 50px;
+    height: 50px;
+    margin-bottom: 10px;
+}
+
+p {
+    font-size: 14px;
+    font-weight: 500;
+    color: #333;
+}
+
+
+/* Kickstart Career Section */
+
+.careerSection {
+    background: white;
+    margin-top: 40px;
+    padding: 30px;
+    width: 80%;
+    /* border-radius: 10px; */
+    /* box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); */
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+}
+
+.careerSection h2 {
+    font-size: 40px;
+    font-weight: bold;
+    color: #666;
+}
+
+.careerSection p {
+    font-size: 22px;
+    color: #333;
+    margin: 10px 0;
+}
+
+.benefitsList {
+    list-style: none;
+    display: flex;
+    padding: 0;
+    margin: 20px 0;
+    gap: 20px;
+}
+
+.benefitsList li {
+    font-size: 16px;
+    /* font-weight: 500; */
+    color: #333;
+    align-items: center;
+    margin-bottom: 10px;
+}

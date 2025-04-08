@@ -1,0 +1,42 @@
+{
+    "title": "Real Stories, Real Success",
+    "subTitle": "Discover what our learners say about us",
+    "profiles": [
+        {
+            "image": "jaya_sinha.png",
+            "company": "amazon",
+            "name": "Jaya Sinha",
+            "designation": "Data Scientist"
+        },
+        {
+            "image": "arvind_k.png",
+            "company": "TheMathCompany",
+            "name": "Arvind K.",
+            "designation": "Sr Data Scientist"
+        },
+        {
+            "image": "shubham_kumar.png",
+            "company": "HENKEL",
+            "name": "Shubham Kumar",
+            "designation": "Data Scientist"
+        },
+        {
+            "image": "mahasweta.png",
+            "company": "Capgemini",
+            "name": "Mahasweta Sarkar",
+            "designation": "Data Analytics Consultant"
+        },
+        {
+            "image": "manoj_ishar.png",
+            "company": "general motors",
+            "name": "Manoj Ishar",
+            "designation": "Data Analyst Engineer"
+        },
+        {
+            "image": "test_6.png",
+            "company": "Deloitte",
+            "name": "Sneha Roy",
+            "designation": "ML Engineer"
+        }
+    ]
+}

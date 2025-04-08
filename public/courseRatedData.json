@@ -1,0 +1,24 @@
+{
+    "courseRated": [
+        {
+            "image": "LinkedIn.jpg",
+            "rating": "Top Rated",
+            "platform": "LinkedIn"
+        },
+        {
+            "image": "CourseReport.jpg",
+            "rating": "4.7",
+            "platform": "Course Report"
+        },
+        {
+            "image": "switchUp.jpg",
+            "rating": "4.7",
+            "platform": "Switchup"
+        },
+        {
+            "image": "Google1.jpg",
+            "rating": "4.7",
+            "platform": "Google"
+        }
+    ]
+}

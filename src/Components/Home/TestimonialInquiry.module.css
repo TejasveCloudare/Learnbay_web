@@ -1,0 +1,149 @@
+.wrapper {
+    display: flex;
+    justify-content: space-around;
+    background: radial-gradient(circle at 10% 10%, rgba(2, 55, 70, 10) 1%, transparent 40%), radial-gradient(circle at 90% 80%, rgba(142, 54, 7, 0.3) 2%, transparent 30%), #212121;
+    ;
+    color: white;
+    flex-wrap: wrap;
+    width: 100%
+}
+
+.mainContainer {
+    position: relative;
+    padding: 5% 0;
+    display: flex;
+    /* grid-template-columns: 56% 32%; */
+    /* grid-gap: 134px; */
+    gap: 134px;
+    z-index: 1;
+    width: 80%;
+    /* justify-content: center; */
+}
+
+.left {
+    width: 50%;
+    padding-right: 20px;
+}
+
+.head {
+    color: #fff;
+    font-size: 22px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 153%;
+    margin-bottom: 10px;
+}
+
+.right {
+    width: 30%;
+    background: white;
+    padding: 50px;
+    border-radius: 20px;
+    color: black;
+}
+
+.rightHead {
+    color: #555;
+    text-align: center;
+    font-size: 22px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 191.682%;
+}
+
+.quote {
+    color: #0072bc;
+    font-size: 44px;
+    font-style: normal;
+    font-weight: 800;
+    line-height: 103%;
+}
+
+.review {
+    color: #fff;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: 153%;
+    width: 500px;
+}
+
+.author {
+    margin-bottom: 20px;
+}
+
+.name {
+    font-weight: bold;
+    color: #ff6400;
+}
+
+.role {
+    color: #1db9fc;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+form input,
+form select {
+    padding: 12px 10px;
+    border: none;
+    border-bottom: 2px solid #ccc;
+    border-radius: 0;
+    font-size: 15px;
+    background: transparent;
+    outline: none;
+}
+
+.buttonContainer {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+form button {
+    padding: 5px;
+    background-color: #0173B9;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: 600;
+    width: 80%;
+}
+
+.slider {
+    overflow: hidden;
+    width: 100%;
+    margin-top: 30px;
+}
+
+.slideTrack {
+    display: flex;
+    animation: scroll 15s linear infinite;
+    gap: 30px;
+}
+
+.slide {
+    flex: 0 0 auto;
+    background: #012345;
+    border-radius: 15px;
+    padding: 10px 20px;
+}
+
+.slide img {
+    height: 60px;
+}
+
+@keyframes scroll {
+    0% {
+        transform: translateX(0%);
+    }
+
+    100% {
+        transform: translateX(-50%);
+    }
+}

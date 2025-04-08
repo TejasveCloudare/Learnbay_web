@@ -1,0 +1,42 @@
+{
+    "leftToRight": [
+        {
+            "name": "Data Science",
+            "icon": "/data-science.jpg"
+        },
+        {
+            "name": "Data Analytics",
+            "icon": "/data-analytics.png"
+        },
+        {
+            "name": "Business Analytics",
+            "icon": "/business-analytics.png"
+        },
+        {
+            "name": "Cloud Computing",
+            "icon": "/cloud-computing.png"
+        },
+        {
+            "name": "DevOps",
+            "icon": "/devops.png"
+        }
+    ],
+    "rightToLeft": [
+        {
+            "name": "BFSI",
+            "icon": "/bfsi.png"
+        },
+        {
+            "name": "Healthcare",
+            "icon": "/healthcare.png"
+        },
+        {
+            "name": "Marketing",
+            "icon": "/marketing.png"
+        },
+        {
+            "name": "Gen AI",
+            "icon": "/gen-ai.png"
+        }
+    ]
+}

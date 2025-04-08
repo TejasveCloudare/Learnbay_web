@@ -1,0 +1,88 @@
+{
+    "sidebar": [
+        "Certification Courses",
+        "Domain Certification",
+        "DSA / Cloud & DevOps",
+        "Managers / HR / BFSI",
+        "Cyber Security",
+        "GEN AI"
+    ],
+    "courses": [{
+            "provider": "IBM & Microsoft",
+            "title": "Data Science and Generative AI Program",
+            "duration": "13 months | 4 Capstone Projects",
+            "certification": "Certification from IBM",
+            "target": "For Working Professionals"
+        },
+        {
+            "provider": "Google",
+            "title": "Cloud Computing and DevOps",
+            "duration": "10 months | Hands-on Labs",
+            "certification": "Google Cloud Certification",
+            "target": "IT Professionals"
+        },
+        {
+            "provider": "Amazon",
+            "title": "Advanced Cloud Security Course",
+            "duration": "6 months | Real-time Projects",
+            "certification": "AWS Security Certificate",
+            "target": "Cyber Security Enthusiasts"
+        },
+        {
+            "provider": "Meta",
+            "title": "Full Stack Development Program",
+            "duration": "12 months | 5 Projects",
+            "certification": "Meta Certified Developer",
+            "target": "Developers & Engineers"
+        },
+        {
+            "provider": "Microsoft",
+            "title": "AI and Machine Learning Professional Program",
+            "duration": "14 months | Case Studies Included",
+            "certification": "Microsoft AI Certificate",
+            "target": "AI Engineers"
+        },
+        {
+            "provider": "LinkedIn",
+            "title": "Leadership and HR Certification",
+            "duration": "3 months | Soft Skills + Strategy",
+            "certification": "LinkedIn Learning Certificate",
+            "target": "Managers / HR Professionals"
+        },
+        {
+            "provider": "Stanford Online",
+            "title": "Cybersecurity for Executives",
+            "duration": "2 months | Executive Level",
+            "certification": "Stanford Exec Certificate",
+            "target": "Executives / CXOs"
+        },
+        {
+            "provider": "MIT xPro",
+            "title": "Quantum Computing & AI",
+            "duration": "16 weeks | Research Based",
+            "certification": "MIT Professional Certificate",
+            "target": "Researchers / Advanced Learners"
+        },
+        {
+            "provider": "LinkedIn",
+            "title": "Leadership and HR Certification",
+            "duration": "3 months | Soft Skills + Strategy",
+            "certification": "LinkedIn Learning Certificate",
+            "target": "Managers / HR Professionals"
+        },
+        {
+            "provider": "Stanford Online",
+            "title": "Cybersecurity for Executives",
+            "duration": "2 months | Executive Level",
+            "certification": "Stanford Exec Certificate",
+            "target": "Executives / CXOs"
+        },
+        {
+            "provider": "MIT xPro",
+            "title": "Quantum Computing & AI",
+            "duration": "16 weeks | Research Based",
+            "certification": "MIT Professional Certificate",
+            "target": "Researchers / Advanced Learners"
+        }
+    ]
+}

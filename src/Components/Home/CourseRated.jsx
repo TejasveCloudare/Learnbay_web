@@ -1,0 +1,67 @@
+import React, { useEffect, useState } from "react";
+import CourseRatedStyles from "./CourseRated.module.css";
+
+const CourseRated = () => {
+  const [ratings, setRatings] = useState([]);
+
+  useEffect(() => {
+    fetch("/courseRatedData.json")
+      .then((res) => res.json())
+      .then((data) => setRatings(data.courseRated))
+      .catch((err) => console.error("Error loading course rated data:", err));
+  }, []);
+
+  return (
+    <section className={CourseRatedStyles.courseRatedSection}>
+      <div className={CourseRatedStyles.container}>
+        {/* Left: Rating Cards */}
+        <div className={CourseRatedStyles.leftSection}>
+          <h2 className={CourseRatedStyles.heading}>Courses Top Rated in:</h2>
+          <p className={CourseRatedStyles.subTitle}>
+            Discover what our learners say about us
+          </p>
+          <div className={CourseRatedStyles.gridContainer}>
+            {ratings.map((item, index) => (
+              <div key={index} className={CourseRatedStyles.card}>
+                <div className={CourseRatedStyles.imageWrapper}>
+                  <img src={`${item.image}`} alt={item.platform} />
+                </div>
+                <div className={CourseRatedStyles.details}>
+                  {item.rating === "Top Rated" ? (
+                    <span className={CourseRatedStyles.topRated}>
+                      {item.rating}
+                    </span>
+                  ) : (
+                    <span className={CourseRatedStyles.rating}>
+                      {item.rating} ★
+                    </span>
+                  )}
+                  <span className={CourseRatedStyles.platform}>
+                    {item.platform}
+                  </span>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* Right: YouTube Video */}
+        <div className={CourseRatedStyles.rightSection}>
+          <div className={CourseRatedStyles.videoWrapper}>
+            <iframe
+              width="100%"
+              height="100%"
+              src="https://www.youtube.com/watch?v=s4Y9JwsoQ9Y&list=PLw_-1YVBV6Xf5EoU1UMwRg0K2kXkV5Lii"
+              title="Learnbay Success Stories"
+              frameBorder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowFullScreen
+            ></iframe>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+};
+
+export default CourseRated;
