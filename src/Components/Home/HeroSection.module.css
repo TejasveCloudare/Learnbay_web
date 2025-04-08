@@ -21,14 +21,15 @@
 }
 
 .btnContainer {
-    background-color: #0173B9;
+    /* background-color: #0173B9; */
+    background-color: #ff800d;
     color: white;
     border-radius: 8px;
     font-size: 1.125rem;
     font-weight: 600;
     text-decoration: none;
     display: flex;
-    border: 2px solid #0173B9;
+    border: 2px solid #ff800d;
     text-align: center;
     transition: all 0.3s ease-in-out;
 }
@@ -108,14 +109,14 @@
 /* CTA Button */
 
 .ctaButton {
-    background-color: #0173B9;
+    background-color: #ff800d;
     padding: 5px 10px;
     border-radius: 8px;
     font-size: 1.125rem;
     font-weight: 600;
     text-decoration: none;
     display: inline-block;
-    border: 2px solid #0173B9;
+    border: 2px solid #ff800d;
     text-align: center;
     transition: all 0.3s ease-in-out;
     position: relative;
@@ -197,7 +198,7 @@
 /* Eligibility Button */
 
 .eligibilityButton {
-    background-color: #002244;
+    background-color: #ff800d;
     color: white;
     padding: 5px 8px;
     margin-top: 16px;
@@ -206,7 +207,7 @@
     font-weight: 600;
     text-decoration: none;
     display: block;
-    border: 2px solid #002244;
+    border: 2px solid #ff800d;
     text-align: center;
     transition: all 0.3s ease-in-out;
     position: relative;

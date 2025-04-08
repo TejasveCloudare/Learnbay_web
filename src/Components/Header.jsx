@@ -26,8 +26,8 @@ function Header() {
         <div className={headerStyle.leftSection}>
           <Link to="/" className={headerStyle.logoLink}>
             <img
-              src="/learnbay-logo.avif"
-              alt="Learnbay Logo"
+              src="/edynoorLogo.jpeg"
+              alt="edynoorLogo Logo"
               className={headerStyle.logo}
             />
           </Link>

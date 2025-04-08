@@ -20,16 +20,20 @@
     gap: 50px;
 }
 
-.logo {
-    width: 180px;
-    height: 50px;
+.logoSection {
+    display: flex;
+    align-items: center;
+    gap: 10px;
 }
 
-@media (min-width: 768px) {
-    .logo {
-        width: 230px;
-        height: 53px;
-    }
+.logoLink {
+    display: inline-block;
+}
+
+.logo {
+    width: 140px;
+    height: 50px;
+    object-fit: contain;
 }
 
 .dropdownContainer {
@@ -37,7 +41,7 @@
 }
 
 .dropdownButton {
-    background-color: #0173B9;
+    background-color: #ff800d;
     color: white;
     font-size: 16px;
     font-style: normal;
@@ -47,13 +51,13 @@
     display: flex;
     align-items: center;
     border-radius: 2.67px;
-    border: 1px solid #0173B9;
+    border: 1px solid #ff800d;
     transition: all 0.3s ease;
 }
 
 .dropdownButton:hover {
     background-color: white;
-    color: #0173B9;
+    color: #ff800d;
 }
 
 .icon {
@@ -106,7 +110,7 @@
 }
 
 .navLink {
-    color: black;
+    color: #ff800d;
     font-size: 1rem;
     font-weight: 600;
     transition: all 0.3s ease;
@@ -114,16 +118,16 @@
 }
 
 .navLink:hover {
-    color: #0173B9;
+    color: #494949;
 }
 
 .applyBtn {
-    background-color: #0173B9;
+    background-color: #ff800d;
     color: white;
     font-size: 1rem;
     font-weight: 400;
     padding: 0.5rem 1.25rem;
-    border: 1px solid #0173B9;
+    border: 1px solid #ff800d;
     border-radius: 0.125rem;
     transition: all 0.3s ease;
     text-decoration: none;
@@ -133,7 +137,7 @@
 
 .applyBtn:hover {
     background-color: white;
-    color: #0173B9;
+    color: #ff800d;
 }
 
 .mobileMenu {
@@ -163,16 +167,16 @@
 }
 
 .mobileLink:hover {
-    color: #0173B9;
+    color: #FF800D;
 }
 
 .mobileApplyBtn {
-    background-color: #0173B9;
+    background-color: #FF800D;
     color: white;
     font-size: 1rem;
     font-weight: 400;
     padding: 0.5rem 1rem;
-    border: 1px solid #0173B9;
+    border: 1px solid #FF800D;
     border-radius: 0.125rem;
     width: 100%;
     text-align: center;
@@ -182,5 +186,5 @@
 
 .mobileApplyBtn:hover {
     background-color: white;
-    color: #0173B9;
+    color: #FF800D;
 }

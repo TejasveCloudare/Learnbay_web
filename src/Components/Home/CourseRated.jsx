@@ -51,7 +51,7 @@ const CourseRated = () => {
             <iframe
               width="100%"
               height="100%"
-              src="https://www.youtube.com/watch?v=s4Y9JwsoQ9Y&list=PLw_-1YVBV6Xf5EoU1UMwRg0K2kXkV5Lii"
+              src="https://www.youtube.com/watch?v=VigFI4TuwzI"
               title="Learnbay Success Stories"
               frameBorder="0"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"

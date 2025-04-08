@@ -1,0 +1,30 @@
+[
+    {
+        "city": "Pune",
+        "address": "Ofc No. 408, 4th Floor, City Space, Opp To Fiserv, Viman Nagar, Pune, Maharashtra 411014"
+    },
+    {
+        "city": "Hyderabad",
+        "address": "C9WH+W92, HUDA Techno Enclave, HITEC City, Hyderabad, Telangana 500081"
+    },
+    {
+        "city": "Mumbai",
+        "address": "Business Centre, 2nd Floor, Apeejay House, Dinshaw Vacha Road, Churchgate, Mumbai, Maharashtra 400020"
+    },
+    {
+        "city": "Bangalore",
+        "address": "1090 1st Floor, 18th Cross Road, Above Sangam Sweets, Sector 3, HSR Layout, Bengaluru, Karnataka 560102"
+    },
+    {
+        "city": "Delhi (NCR)",
+        "address": "Office Number:3, Ground Floor, Building Number D13, Sector : 3, Noida, Uttar Pradesh 201301"
+    },
+    {
+        "city": "Chennai",
+        "address": "Apeejay Business Centre, Phone Booth, 1st Floor, Apeejay House, 39/12 Haddows Road, Nungambakkam, Chennai 600 006"
+    },
+    {
+        "city": "Kolkata",
+        "address": "Ambuja Neotia EcoCentre 15th Floor, EM-4, EM-Block, Sector 5, Kolkata 700091"
+    }
+]
