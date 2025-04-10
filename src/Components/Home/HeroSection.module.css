@@ -12,6 +12,55 @@
     padding-top: 90px;
 }
 
+.slideControls {
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    z-index: 10;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 1rem;
+    transform: translateY(-50%);
+}
+
+.arrowBtn {
+    background: rgba(255, 255, 255, 0.15);
+    border: none;
+    border-radius: 50%;
+    color: white;
+    cursor: pointer;
+    padding: 0.5rem;
+    transition: background 0.3s ease;
+}
+
+.arrowBtn:hover {
+    background: rgba(255, 255, 255, 0.3);
+}
+
+.dotsContainer {
+    position: absolute;
+    bottom: 1.5rem;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 10px;
+}
+
+.dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.4);
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.activeDot {
+    background-color: white;
+    transform: scale(1.2);
+    box-shadow: 0 0 8px white;
+}
+
 .insideContainer {
     justify-content: space-around;
     display: flex;

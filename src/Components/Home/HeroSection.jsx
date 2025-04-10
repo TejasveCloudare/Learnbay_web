@@ -1,32 +1,72 @@
-import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import React, { useEffect, useState } from "react";
 import heroStyles from "./HeroSection.module.css";
 import ApplyModal from "./ApplyModal";
+import { ChevronLeft, ChevronRight } from "lucide-react";
 
 function HeroSection() {
+  const [bannerData, setBannerData] = useState([]);
+  const [currentIndex, setCurrentIndex] = useState(0);
   const [isModalOpen, setModalOpen] = useState(false);
+
+  useEffect(() => {
+    fetch("/heroBanners.json")
+      .then((res) => res.json())
+      .then((data) => setBannerData(data));
+  }, []);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentIndex((prev) => (prev + 1) % bannerData.length);
+    }, 7000);
+    return () => clearInterval(interval);
+  }, [bannerData]);
+
+  const handleNext = () => {
+    setCurrentIndex((prev) => (prev + 1) % bannerData.length);
+  };
+
+  const handlePrev = () => {
+    setCurrentIndex((prev) => (prev === 0 ? bannerData.length - 1 : prev - 1));
+  };
+
+  const jumpToSlide = (index) => {
+    setCurrentIndex(index);
+  };
+
+  if (!bannerData.length) return null;
+
+  const currentBanner = bannerData[currentIndex];
 
   return (
     <>
-      <div className={heroStyles.heroSection}>
+      <div
+        className={heroStyles.heroSection}
+        style={{ background: currentBanner.background }}
+      >
+        <div className={heroStyles.slideControls}>
+          <button className={heroStyles.arrowBtn} onClick={handlePrev}>
+            <ChevronLeft size={32} />
+          </button>
+          <button className={heroStyles.arrowBtn} onClick={handleNext}>
+            <ChevronRight size={32} />
+          </button>
+        </div>
+
         <div className={heroStyles.insideContainer}>
           <div className={heroStyles.leftContainer}>
             <div className={heroStyles.headText}>
               <h1 className={heroStyles.heroTitle}>
-                India’s{" "}
+                {currentBanner.title.split(currentBanner.highlight)[0]}
                 <span className={heroStyles.highlightText}>
-                  #1 Project-based
-                </span>{" "}
-                Upskilling Platform for Professionals
+                  {currentBanner.highlight}
+                </span>
+                {currentBanner.title.split(currentBanner.highlight)[1]}
               </h1>
             </div>
             <div className={heroStyles.bulletContainer}>
-              <li>
-                ✔ Get ready to crack your <strong>dream job interview</strong>
-              </li>
-              <li>
-                ✔ Learn from industry experts on <strong>real projects</strong>
-              </li>
+              {currentBanner.bullets.map((bullet, idx) => (
+                <li key={idx} dangerouslySetInnerHTML={{ __html: bullet }} />
+              ))}
             </div>
             <div className={heroStyles.btnContainer}>
               <button
@@ -38,25 +78,18 @@ function HeroSection() {
             </div>
             <div className={heroStyles.companyContainer}>
               <div className={heroStyles.logoContainer}>
-                <img src="/ibm.png" alt="IBM" className={heroStyles.logo} />
-                <span className={heroStyles.separator}>|</span>
-                <img
-                  src="/RE1Mu3b.png"
-                  alt="Microsoft"
-                  className={heroStyles.logo}
-                />
-                <span className={heroStyles.separator}>|</span>
-                <img
-                  src="/e and ict.jpg"
-                  alt="IIT Guwahati"
-                  className={heroStyles.logo}
-                />
-                <span className={heroStyles.separator}>|</span>
-                <img
-                  src="/woolf.png"
-                  alt="Woolf University"
-                  className={heroStyles.logo}
-                />
+                {currentBanner.logos.map((logo, idx) => (
+                  <React.Fragment key={idx}>
+                    <img
+                      src={logo}
+                      alt={`Logo ${idx}`}
+                      className={heroStyles.logo}
+                    />
+                    {idx !== currentBanner.logos.length - 1 && (
+                      <span className={heroStyles.separator}>|</span>
+                    )}
+                  </React.Fragment>
+                ))}
               </div>
             </div>
           </div>
@@ -95,9 +128,21 @@ function HeroSection() {
             </aside>
           </div>
         </div>
+
+        <div className={heroStyles.dotsContainer}>
+          {bannerData.map((_, index) => (
+            <span
+              key={index}
+              onClick={() => jumpToSlide(index)}
+              className={`${heroStyles.dot} ${
+                index === currentIndex ? heroStyles.activeDot : ""
+              }`}
+            ></span>
+          ))}
+        </div>
       </div>
 
-      {/* Modal Component */}
+      {/* Modal */}
       <ApplyModal showModal={isModalOpen} onClose={() => setModalOpen(false)} />
     </>
   );

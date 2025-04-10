@@ -32,7 +32,7 @@ function Footer() {
           alt="edynoor Logo"
           className={styles.logo}
         />
-        <p>© {new Date().getFullYear()} Learnbay. All rights reserved.</p>
+        <p>© {new Date().getFullYear()} Edynoor. All rights reserved.</p>
       </div>
     </footer>
   );

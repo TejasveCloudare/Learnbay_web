@@ -24,13 +24,16 @@ function Header() {
       <nav className={headerStyle.navbar}>
         {/* Logo + Courses */}
         <div className={headerStyle.leftSection}>
-          <Link to="/" className={headerStyle.logoLink}>
-            <img
-              src="/edynoorLogo.jpeg"
-              alt="edynoorLogo Logo"
-              className={headerStyle.logo}
-            />
-          </Link>
+          <div className={headerStyle.logoSection}>
+            <Link to="/" className={headerStyle.logoLink}>
+              <img
+                src="/edynoor_logo_without_title.jpg"
+                alt="edynoorLogo Logo"
+                className={headerStyle.logo}
+              />
+            </Link>
+            <h1 className={headerStyle.logoText}>Edynoor</h1>
+          </div>
 
           {/* Courses Dropdown */}
           <div

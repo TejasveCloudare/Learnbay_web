@@ -2,7 +2,7 @@
     width: 100vw;
     background-color: white;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    height: 80px;
+    height: 12%;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -23,7 +23,9 @@
 .logoSection {
     display: flex;
     align-items: center;
-    gap: 10px;
+    /* gap: 10px; */
+    width: 30%;
+    flex-direction: column;
 }
 
 .logoLink {
@@ -31,9 +33,24 @@
 }
 
 .logo {
-    width: 140px;
+    width: 50px;
+    /* or your desired size */
     height: 50px;
     object-fit: contain;
+}
+
+.logoText {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #494949;
+    /* Adjust as needed */
+}
+
+@media (min-width: 768px) {
+    .logo {
+        width: 230px;
+        height: 53px;
+    }
 }
 
 .dropdownContainer {
@@ -111,8 +128,8 @@
 
 .navLink {
     color: #ff800d;
-    font-size: 1rem;
-    font-weight: 600;
+    font-weight: 500;
+    font-size: 18px;
     transition: all 0.3s ease;
     text-decoration: none;
 }
