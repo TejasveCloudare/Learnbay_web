@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
-import styles from "./Footer.module.css";
+import footerStyles from "./Footer.module.css";
+import { Link } from "react-router-dom";
 
 function Footer() {
   const [addresses, setAddresses] = useState([]);
@@ -12,26 +13,30 @@ function Footer() {
   }, []);
 
   return (
-    <footer className={styles.footer}>
-      <div className={styles.addressSection}>
+    <footer className={footerStyles.footer}>
+      <div className={footerStyles.addressSection}>
         <h3>Project Innovation Lab Address</h3>
-        <div className={styles.grid}>
+        <div className={footerStyles.grid}>
           {addresses.map((item, idx) => (
-            <div key={idx} className={styles.addressBox}>
+            <div key={idx} className={footerStyles.addressBox}>
               <strong>{item.city}</strong>
               <p>{item.address}</p>
             </div>
           ))}
         </div>
-        <button className={styles.viewMore}>View More ↓</button>
+        <button className={footerStyles.viewMore}>View More ↓</button>
       </div>
-
-      <div className={styles.bottomBar}>
-        <img
-          src="/edynoorLogo.jpeg"
-          alt="edynoor Logo"
-          className={styles.logo}
-        />
+      <div className={footerStyles.bottomBar}>
+        <div className={footerStyles.logoSection}>
+          <Link to="/" className={footerStyles.logoLink}>
+            <img
+              src="/edynoor_logo_without_title-removebg.png"
+              alt="edynoorLogo Logo"
+              className={footerStyles.logo}
+            />
+          </Link>
+          <h1 className={footerStyles.logoText}>Edynoor</h1>
+        </div>
         <p>© {new Date().getFullYear()} Edynoor. All rights reserved.</p>
       </div>
     </footer>

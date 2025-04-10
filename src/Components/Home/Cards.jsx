@@ -3,8 +3,9 @@ import cardStyle from "./Cards.module.css";
 
 const Cards = () => {
   const [data, setData] = useState({ sidebar: [], courses: [] });
-  const [managersCourses, setManagersCourses] = useState([]); // New state for additional courses
+  const [managersCourses, setManagersCourses] = useState([]);
   const [showAll, setShowAll] = useState(false);
+  const [activeProgram, setActiveProgram] = useState(""); // Track active program
 
   useEffect(() => {
     // Fetch main course data
@@ -24,7 +25,7 @@ const Cards = () => {
           throw new Error(`HTTP error! Status: ${response.status}`);
         return response.json();
       })
-      .then((json) => setManagersCourses(json.courses)) // Store manager-specific courses
+      .then((json) => setManagersCourses(json.courses))
       .catch((error) =>
         console.error("Error loading ManagersCourseData.json:", error)
       );
@@ -33,6 +34,17 @@ const Cards = () => {
   // Show only 9 courses if showAll is false
   const displayedCourses = showAll ? data.courses : data.courses.slice(0, 9);
 
+  // Filter courses based on the selected program
+  const filterCoursesByProgram = (program) => {
+    setActiveProgram(program);
+  };
+
+  // Filter courses by active program
+  const filteredCourses =
+    activeProgram === ""
+      ? data.courses
+      : data.courses.filter((course) => course.target.includes(activeProgram));
+
   return (
     <div className={cardStyle.container}>
       {/* Sidebar */}
@@ -40,7 +52,13 @@ const Cards = () => {
         <h2 className={cardStyle.sidebarTitle}>Popular Programs</h2>
         <ul className={cardStyle.sidebarList}>
           {data.sidebar.map((item, index) => (
-            <li key={index} className={cardStyle.sidebarItem}>
+            <li
+              key={index}
+              className={`${cardStyle.sidebarItem} ${
+                activeProgram === item ? cardStyle.active : ""
+              }`} // Add active class if the program is selected
+              onClick={() => filterCoursesByProgram(item)} // Set the active program
+            >
               <span className={cardStyle.sidebarIcon}>📘</span>
               <span className={cardStyle.sidebarText}>{item}</span>
               {item === "GEN AI" && (
@@ -54,7 +72,7 @@ const Cards = () => {
       {/* Cards Section */}
       <main className={cardStyle.cardsSection}>
         <div className={cardStyle.cardGrid}>
-          {displayedCourses.map((course, index) => (
+          {filteredCourses.map((course, index) => (
             <div key={index} className={cardStyle.card}>
               {course.image && (
                 <div className={cardStyle.imageWrapper}>

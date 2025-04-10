@@ -2,7 +2,7 @@
     width: 100vw;
     background-color: white;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    height: 12%;
+    height: 11%;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -17,7 +17,8 @@
 .leftSection {
     display: flex;
     align-items: center;
-    gap: 50px;
+    /* gap: 50px; */
+    justify-content: space-evenly;
 }
 
 .logoSection {
@@ -40,10 +41,11 @@
 }
 
 .logoText {
-    font-size: 1.5rem;
+    font-size: 1rem;
     font-weight: bold;
     color: #494949;
     /* Adjust as needed */
+    margin: -10%;
 }
 
 @media (min-width: 768px) {
@@ -63,7 +65,7 @@
     font-size: 16px;
     font-style: normal;
     font-weight: 500;
-    padding: 8px 15px;
+    padding: 5px 8px;
     letter-spacing: .7px;
     display: flex;
     align-items: center;
@@ -139,7 +141,7 @@
 }
 
 .applyBtn {
-    background-color: #ff800d;
+    /* background-color: #ff800d;
     color: white;
     font-size: 1rem;
     font-weight: 400;
@@ -149,7 +151,19 @@
     transition: all 0.3s ease;
     text-decoration: none;
     display: flex;
+    align-items: center; */
+    background-color: #ff800d;
+    color: white;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    padding: 5px 8px;
+    letter-spacing: .7px;
+    display: flex;
     align-items: center;
+    border-radius: 2.67px;
+    border: 1px solid #ff800d;
+    transition: all 0.3s ease;
 }
 
 .applyBtn:hover {

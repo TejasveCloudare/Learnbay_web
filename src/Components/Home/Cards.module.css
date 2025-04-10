@@ -6,13 +6,24 @@
 }
 
 .sidebar {
-    width: 25%;
+    /* width: 25%;
     background-color: white;
     padding: 1.25rem;
     border-radius: 1rem;
     position: sticky;
-    top: 80px;
+    top: 80px; */
     /* box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); */
+    width: 25%;
+    background-color: white;
+    padding: 1.5rem;
+    border-radius: 1rem;
+    position: sticky;
+    top: 80px;
+    /* Adjust to match your header height */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
+    transition: top 0.3s ease-in-out;
+    z-index: 10;
+    height: min-content;
 }
 
 .sidebarTitle {
@@ -58,6 +69,12 @@
     font-size: 0.75rem;
     padding: 0.125rem 0.5rem;
     border-radius: 9999px;
+}
+
+.sidebarItem.active {
+    background-color: #e0e0e0;
+    /* You can customize the active state color */
+    font-weight: bold;
 }
 
 .cardsSection {

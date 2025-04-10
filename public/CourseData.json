@@ -7,7 +7,8 @@
         "Cyber Security",
         "GEN AI"
     ],
-    "courses": [{
+    "courses": [
+        {
             "provider": "IBM & Microsoft",
             "title": "Data Science and Generative AI Program",
             "duration": "13 months | 4 Capstone Projects",
