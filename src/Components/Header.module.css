@@ -242,8 +242,10 @@
         position: absolute;
         left: 50%;
         transform: translateX(-50%);
-        flex-direction: row;
+        /* flex-direction: row; */
         width: auto;
+        display: flex;
+        flex-direction: column;
     }
 
     .logo {
