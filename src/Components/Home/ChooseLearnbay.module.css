@@ -206,3 +206,90 @@
     max-width: 100px;
     height: auto;
 }
+
+
+/* RESPONSIVE STYLING */
+
+@media (max-width: 1024px) {
+    .reasons {
+        width: 90%;
+    }
+
+    .trainingSection {
+        flex-direction: column;
+        align-items: center;
+        gap: 2rem;
+    }
+
+    .subHeading {
+        font-size: 2rem;
+        text-align: center;
+    }
+
+    .description {
+        font-size: 1.2rem;
+        text-align: center;
+    }
+
+    .modeItem {
+        width: 100%;
+        grid-template-columns: 1fr;
+        justify-content: center;
+    }
+
+    .textColumn {
+        text-align: center;
+    }
+
+    .keyPointList {
+        flex-direction: column;
+        align-items: flex-start;
+        margin-left: 20%;
+    }
+
+    .importantNote {
+        text-align: center;
+    }
+
+    .verticalLine {
+        display: none;
+        /* Remove vertical line on mobile/tablet */
+    }
+
+    .iconColumn {
+        margin-bottom: 1rem;
+    }
+}
+
+@media (max-width: 600px) {
+    .mainHeading {
+        font-size: 2rem;
+        padding: 3% 1rem;
+    }
+
+    .outlineText {
+        font-size: 2rem;
+        -webkit-text-stroke: 0.5px #fff1ea;
+    }
+
+    .subHeading {
+        font-size: 1.5rem;
+    }
+
+    .description {
+        font-size: 1rem;
+    }
+
+    .keyPointItem {
+        font-size: 0.85rem;
+    }
+
+    .modeItemBlock {
+        flex-direction: column;
+        gap: 0.25rem;
+    }
+
+    .domainItem {
+        width: 80px;
+    }
+}

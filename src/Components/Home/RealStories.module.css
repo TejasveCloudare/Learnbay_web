@@ -153,3 +153,93 @@
     color: #f9a825;
     /* yellow star color */
 }
+
+
+/* Tablet: Show 2-3 cards per slide */
+
+@media (max-width: 1024px) {
+    .card {
+        min-width: 33.33%;
+        /* 3 per row */
+    }
+
+    .arrowLeft,
+    .arrowRight {
+        font-size: 26px;
+        padding: 5px 10px;
+    }
+
+    .title {
+        font-size: 28px;
+    }
+
+    .subTitle {
+        font-size: 16px;
+    }
+}
+
+
+/* Mobile: Show 1-2 cards per slide */
+
+@media (max-width: 768px) {
+    .card {
+        min-width: 50%;
+        /* 2 per row */
+        padding: 10px;
+    }
+
+    .arrowLeft,
+    .arrowRight {
+        font-size: 24px;
+        padding: 4px 8px;
+    }
+
+    .title {
+        font-size: 24px;
+    }
+
+    .subTitle {
+        font-size: 14px;
+    }
+
+    .profileImg {
+        width: 70px;
+        height: 70px;
+    }
+
+    .card h4 {
+        font-size: 15px;
+    }
+
+    .card p {
+        font-size: 13px;
+    }
+
+    .companyLogo {
+        height: 18px;
+    }
+}
+
+
+/* Extra small devices */
+
+@media (max-width: 480px) {
+    .card {
+        min-width: 100%;
+        /* 1 per row */
+    }
+
+    .title {
+        font-size: 22px;
+    }
+
+    .subTitle {
+        font-size: 13px;
+    }
+
+    .arrowLeft,
+    .arrowRight {
+        font-size: 22px;
+        padding: 3px 6px;
+    }
+}

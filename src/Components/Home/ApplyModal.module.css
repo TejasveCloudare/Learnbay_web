@@ -1,3 +1,5 @@
+/* Modal Overlay */
+
 .modalOverlay {
     position: fixed;
     top: 0;
@@ -11,6 +13,9 @@
     z-index: 9999;
 }
 
+
+/* Modal Content */
+
 .modalContent {
     background-color: white;
     display: flex;
@@ -19,18 +24,33 @@
     border-radius: 12px;
     overflow: hidden;
     position: relative;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
+
+
+/* Left Section Styling */
 
 .leftSection {
     flex: 1;
     background-color: #f7f7f7;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .modalImage {
     width: 100%;
     height: 100%;
-    object-fit: fill;
+    object-fit: contain;
+    /* Ensures the image fits inside without cropping */
+    max-height: 100%;
+    /* Ensures image does not overflow */
+    max-width: 100%;
+    /* Ensures image does not overflow */
 }
+
+
+/* Right Section Styling */
 
 .rightSection {
     flex: 1;
@@ -38,6 +58,22 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
+    align-items: flex-start;
+}
+
+h2 {
+    font-size: 24px;
+    font-weight: 600;
+    margin-bottom: 20px;
+    color: #333;
+    line-height: 1.4;
+}
+
+
+/* Form Styling */
+
+.form {
+    width: 100%;
 }
 
 .form input,
@@ -46,6 +82,9 @@
     margin: 10px 0;
     padding: 12px;
     font-size: 16px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    box-sizing: border-box;
 }
 
 .form button {
@@ -57,7 +96,15 @@
     margin-top: 15px;
     cursor: pointer;
     border-radius: 4px;
+    transition: background-color 0.3s ease;
 }
+
+.form button:hover {
+    background-color: #005fa3;
+}
+
+
+/* Close Button Styling */
 
 .closeButton {
     position: absolute;
@@ -67,4 +114,92 @@
     background: none;
     border: none;
     cursor: pointer;
+}
+
+
+/* === Responsive Design === */
+
+@media (max-width: 1024px) {
+    .modalContent {
+        width: 90%;
+    }
+
+    .modalImage {
+        object-fit: contain;
+        /* Ensures the image fits properly */
+    }
+
+    .leftSection {
+        flex: 1 1 40%;
+    }
+
+    .rightSection {
+        flex: 1 1 60%;
+        padding: 20px;
+    }
+
+    .form input,
+    .form select,
+    .form button {
+        font-size: 14px;
+        /* Adjust font size for smaller screens */
+    }
+}
+
+@media (max-width: 768px) {
+    .modalContent {
+        /* flex-direction: column; */
+        /* Stack sections vertically on smaller screens */
+        width: 95%;
+    }
+
+    .leftSection,
+    .rightSection {
+        flex: 1;
+        width: 100%;
+    }
+
+    .modalImage {
+        height: auto;
+        object-fit: contain;
+        /* Prevent image cropping */
+    }
+
+    .form input,
+    .form select,
+    .form button {
+        font-size: 14px;
+    }
+
+    h2 {
+        font-size: 20px;
+        /* Adjust heading font size */
+        margin-bottom: 15px;
+    }
+}
+
+@media (max-width: 480px) {
+    .modalContent {
+        width: 100%;
+        /* Ensure modal takes full width on small screens */
+        padding: 10px;
+    }
+
+    .modalImage {
+        height: auto;
+        height: auto;
+        object-fit: contain;
+    }
+
+    .form input,
+    .form select,
+    .form button {
+        font-size: 14px;
+        padding: 10px;
+    }
+
+    h2 {
+        font-size: 18px;
+        /* Smaller heading for mobile screens */
+    }
 }

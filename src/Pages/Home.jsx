@@ -6,6 +6,7 @@ import ChooseLearnbay from "../Components/Home/ChooseLearnbay";
 import RealStories from "../Components/Home/RealStories";
 import CourseRated from "../Components/Home/CourseRated";
 import TestimonialInquiry from "../Components/Home/TestimonialInquiry";
+import OthersVsLearnbay from "../Components/Home/OthersVsLearnbay";
 
 function Home() {
   return (
@@ -17,6 +18,7 @@ function Home() {
       <RealStories />
       <CourseRated />
       <TestimonialInquiry />
+      <OthersVsLearnbay />
     </div>
   );
 }

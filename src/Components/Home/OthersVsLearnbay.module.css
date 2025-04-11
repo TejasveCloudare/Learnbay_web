@@ -1,0 +1,235 @@
+/* General section wrapper styling */
+
+.sectionWrapper {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+
+/* === Top Logo Section === */
+
+.logoSection {
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    margin: 40px auto;
+    padding: 20px;
+    max-width: 960px;
+    text-align: center;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+}
+
+.companyLogos {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.companyLogos img {
+    height: 30px;
+    object-fit: contain;
+}
+
+.hiringText {
+    font-size: 16px;
+    font-weight: 500;
+    color: #444;
+}
+
+
+/* === Comparison Section === */
+
+.comparisonSection {
+    padding: 40px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.title {
+    text-align: center;
+    color: #000;
+    font-size: 40px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 50px;
+    margin-bottom: 40px;
+}
+
+.comparisonContainer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: stretch;
+    width: 100%;
+    max-width: 1200px;
+    /* gap: 20px; */
+}
+
+.comparisonColumn {
+    flex: 1 1 30%;
+    min-width: 280px;
+    background-color: #f5f5f5;
+    border-radius: 16px;
+    padding: 30px 25px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s ease;
+}
+
+.comparisonColumn:hover {
+    transform: translateY(-5px);
+}
+
+.learnbayColumn {
+    background-color: #1c1c1c;
+    color: #fff;
+    flex: 1.5 1 35%;
+}
+
+.othersColumn {
+    background-color: #eaeaea;
+    color: #111;
+}
+
+.lightColumn {
+    background-color: #ecf3fb;
+    font-weight: 500;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.row {
+    padding: 12px 0;
+    border-bottom: 1px solid #ddd;
+}
+
+.brand {
+    font-size: 20px;
+    font-weight: 700;
+    margin-bottom: 10px;
+    color: #007bff;
+}
+
+.pointList {
+    list-style: none;
+    padding: 0;
+    text-align: left;
+    /* margin-top: 20px; */
+    gap: 10px;
+    display: flex;
+    flex-direction: column;
+}
+
+.pointList li {
+    margin: 12px 0;
+    font-size: 15px;
+    display: flex;
+    align-items: left;
+}
+
+.pointList li span {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.pointList li img {
+    width: 25px;
+    height: 25px;
+    aspect-ratio: auto 25 / 25;
+}
+
+.rightLi {
+    gap: 10px;
+}
+
+
+/* === Responsive Design === */
+
+@media screen and (max-width: 1024px) {
+    .comparisonContainer {
+        flex-direction: column;
+        align-items: center;
+        width: 90%;
+    }
+
+    .comparisonColumn {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+
+    .learnbayColumn {
+        order: 2;
+    }
+
+    .othersColumn {
+        order: 3;
+    }
+
+    .lightColumn {
+        order: 1;
+        /* flex-direction: row; */
+        justify-content: space-between;
+        /* flex-wrap: wrap; */
+        gap: 10px;
+        text-align: start;
+    }
+
+    .row {
+        flex: 1 1 45%;
+        padding: 10px;
+        border-bottom: none;
+    }
+
+    .pointList li {
+        font-size: 14px;
+    }
+
+    .brand {
+        font-size: 18px;
+    }
+
+    .title {
+        font-size: 28px;
+        line-height: 36px;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .companyLogos img {
+        height: 20px;
+    }
+
+    .hiringText {
+        font-size: 14px;
+    }
+
+    .logoSection {
+        padding: 15px;
+    }
+
+    .title {
+        font-size: 24px;
+    }
+
+    .comparisonSection {
+        padding: 20px;
+    }
+
+    .comparisonColumn {
+        padding: 20px 15px;
+    }
+
+    .pointList li {
+        font-size: 13px;
+        gap: 8px;
+    }
+
+    .pointList li img {
+        width: 18px;
+        height: 18px;
+    }
+}

@@ -12,9 +12,18 @@ const RealStories = () => {
       .then((data) => setData(data));
   }, []);
 
+  const getVisibleCardsCount = () => {
+    if (window.innerWidth <= 480) return 1;
+    if (window.innerWidth <= 768) return 2;
+    if (window.innerWidth <= 1024) return 3;
+    return 5;
+  };
+
   const handleSlide = (direction) => {
     if (!data) return;
-    const maxIndex = Math.floor(data.profiles.length / 5);
+    const maxIndex =
+      Math.ceil(data.profiles.length / getVisibleCardsCount()) - 1;
+
     let newIndex = currentSlide + direction;
     newIndex = Math.max(0, Math.min(newIndex, maxIndex));
     setCurrentSlide(newIndex);

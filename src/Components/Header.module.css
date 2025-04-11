@@ -9,7 +9,6 @@
     position: fixed;
     z-index: 1002;
     font-size: 14px;
-    position: fixed;
     padding: 0 140px 0 125px;
     background: #fff;
 }
@@ -17,14 +16,12 @@
 .leftSection {
     display: flex;
     align-items: center;
-    /* gap: 50px; */
     justify-content: space-evenly;
 }
 
 .logoSection {
     display: flex;
     align-items: center;
-    /* gap: 10px; */
     width: 30%;
     flex-direction: column;
 }
@@ -35,7 +32,6 @@
 
 .logo {
     width: 50px;
-    /* or your desired size */
     height: 50px;
     object-fit: contain;
 }
@@ -44,7 +40,6 @@
     font-size: 1rem;
     font-weight: bold;
     color: #494949;
-    /* Adjust as needed */
     margin: -10%;
 }
 
@@ -106,13 +101,31 @@
     background-color: #f3f4f6;
 }
 
+
+/* ✅ Hamburger visibility control */
+
 .hamburger {
-    display: block;
+    display: none;
 }
 
-@media (min-width: 768px) {
+
+/* ✅ Show hamburger from tablet & down (max-width: 1024px) */
+
+@media (max-width: 1024px) {
     .hamburger {
-        display: none;
+        display: block !important;
+        order: -1;
+        position: relative;
+        z-index: 1010;
+    }
+}
+
+
+/* ✅ Hide hamburger above 1024px */
+
+@media (min-width: 1025px) {
+    .hamburger {
+        display: none !important;
     }
 }
 
@@ -141,17 +154,6 @@
 }
 
 .applyBtn {
-    /* background-color: #ff800d;
-    color: white;
-    font-size: 1rem;
-    font-weight: 400;
-    padding: 0.5rem 1.25rem;
-    border: 1px solid #ff800d;
-    border-radius: 0.125rem;
-    transition: all 0.3s ease;
-    text-decoration: none;
-    display: flex;
-    align-items: center; */
     background-color: #ff800d;
     color: white;
     font-size: 16px;
@@ -218,4 +220,58 @@
 .mobileApplyBtn:hover {
     background-color: white;
     color: #FF800D;
+}
+
+
+/* ✅ Responsive layout adjustment for tab/mobile view */
+
+@media (max-width: 1024px) {
+    .navbar {
+        justify-content: space-between;
+        padding: 0 1rem;
+    }
+
+    .leftSection {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .logoSection {
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        flex-direction: row;
+        width: auto;
+    }
+
+    .logo {
+        width: 40px;
+        height: 40px;
+    }
+
+    .logoText {
+        margin: 0;
+        font-size: 0.9rem;
+    }
+
+    .dropdownContainer {
+        order: 2;
+        margin-left: auto;
+    }
+
+    .dropdownButton {
+        font-size: 14px;
+        padding: 4px 8px;
+    }
+
+    .dropdownMenu {
+        right: 0;
+        left: auto;
+    }
+
+    .rightNav {
+        display: none !important;
+    }
 }

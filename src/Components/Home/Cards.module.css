@@ -183,3 +183,89 @@
 .viewMoreBtn:hover {
     background-color: #2563eb;
 }
+
+
+/* Hamburger and Responsive */
+
+.mobileHeader {
+    display: none;
+    padding: 1rem;
+}
+
+.hamburger {
+    font-size: 2rem;
+    cursor: pointer;
+}
+
+.mobileClose {
+    display: none;
+    justify-content: flex-end;
+    font-size: 1.5rem;
+    cursor: pointer;
+    margin-bottom: 1rem;
+}
+
+
+/* Responsive Sidebar */
+
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.4);
+    z-index: 9;
+}
+
+
+/* Sidebar hidden on mobile by default */
+
+@media (max-width: 960px) {
+    .container {
+        padding: 1%;
+    }
+}
+
+@media (max-width: 768px) {
+    .sidebarTitle {
+        margin-top: 20%;
+    }
+
+    .container {
+        flex-direction: column;
+        padding: 1rem;
+    }
+
+    .mobileHeader {
+        display: flex;
+        justify-content: flex-start;
+    }
+
+    .sidebar {
+        position: fixed;
+        top: 0;
+        left: -100%;
+        width: 75%;
+        height: 100%;
+        z-index: 10;
+        background-color: white;
+        transition: left 0.3s ease-in-out;
+        padding: 2rem 1.5rem;
+        box-shadow: 2px 0 12px rgba(0, 0, 0, 0.1);
+    }
+
+    .sidebar.showSidebar {
+        left: 0;
+    }
+
+    .mobileClose {
+        display: flex;
+    }
+
+    .cardsSection {
+        width: 100%;
+        padding: 0;
+        margin-top: 1rem;
+    }
+}

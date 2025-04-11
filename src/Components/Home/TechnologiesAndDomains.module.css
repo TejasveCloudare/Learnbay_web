@@ -53,6 +53,7 @@ h2 {
     from {
         transform: translateX(-50%);
     }
+
     to {
         transform: translateX(0%);
     }
@@ -69,6 +70,7 @@ h2 {
     from {
         transform: translateX(0%);
     }
+
     to {
         transform: translateX(-50%);
     }
@@ -141,4 +143,55 @@ p {
     color: #333;
     align-items: center;
     margin-bottom: 10px;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 20px 10px;
+    }
+
+    h2 {
+        font-size: 20px;
+    }
+
+    .slideItem {
+        width: 120px;
+        padding: 10px;
+        margin: 8px;
+    }
+
+    .slideItem img {
+        width: 40px;
+        height: 40px;
+        margin-bottom: 8px;
+    }
+
+    p {
+        font-size: 12px;
+    }
+
+    .careerSection {
+        width: 95%;
+        padding: 20px 10px;
+    }
+
+    .careerSection h2 {
+        font-size: 28px;
+        text-align: center;
+    }
+
+    .careerSection p {
+        font-size: 16px;
+        text-align: center;
+    }
+
+    .benefitsList {
+        flex-direction: column;
+        gap: 10px;
+        align-items: flex-start;
+    }
+
+    .benefitsList li {
+        font-size: 14px;
+    }
 }

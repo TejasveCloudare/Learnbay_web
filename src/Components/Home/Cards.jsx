@@ -1,14 +1,15 @@
 import React, { useEffect, useState } from "react";
 import cardStyle from "./Cards.module.css";
+import { FiMenu, FiX } from "react-icons/fi"; // You can use any icon lib
 
 const Cards = () => {
   const [data, setData] = useState({ sidebar: [], courses: [] });
   const [managersCourses, setManagersCourses] = useState([]);
   const [showAll, setShowAll] = useState(false);
-  const [activeProgram, setActiveProgram] = useState(""); // Track active program
+  const [activeProgram, setActiveProgram] = useState("");
+  const [isSidebarOpen, setIsSidebarOpen] = useState(false); // For responsive
 
   useEffect(() => {
-    // Fetch main course data
     fetch("/CourseData.json")
       .then((response) => {
         if (!response.ok)
@@ -18,7 +19,6 @@ const Cards = () => {
       .then((json) => setData(json))
       .catch((error) => console.error("Error loading CourseData.json:", error));
 
-    // Fetch ManagersCourseData.json
     fetch("/ManagersCourseData.json")
       .then((response) => {
         if (!response.ok)
@@ -31,15 +31,11 @@ const Cards = () => {
       );
   }, []);
 
-  // Show only 9 courses if showAll is false
-  const displayedCourses = showAll ? data.courses : data.courses.slice(0, 9);
-
-  // Filter courses based on the selected program
   const filterCoursesByProgram = (program) => {
     setActiveProgram(program);
+    setIsSidebarOpen(false); // Close sidebar on mobile click
   };
 
-  // Filter courses by active program
   const filteredCourses =
     activeProgram === ""
       ? data.courses
@@ -47,8 +43,31 @@ const Cards = () => {
 
   return (
     <div className={cardStyle.container}>
+      {/* Hamburger for mobile */}
+      <div className={cardStyle.mobileHeader}>
+        <FiMenu
+          className={cardStyle.hamburger}
+          onClick={() => setIsSidebarOpen(true)}
+        />
+      </div>
+
+      {/* Overlay */}
+      {isSidebarOpen && (
+        <div
+          className={cardStyle.overlay}
+          onClick={() => setIsSidebarOpen(false)}
+        ></div>
+      )}
+
       {/* Sidebar */}
-      <aside className={cardStyle.sidebar}>
+      <aside
+        className={`${cardStyle.sidebar} ${
+          isSidebarOpen ? cardStyle.showSidebar : ""
+        }`}
+      >
+        <div className={cardStyle.mobileClose}>
+          <FiX onClick={() => setIsSidebarOpen(false)} />
+        </div>
         <h2 className={cardStyle.sidebarTitle}>Popular Programs</h2>
         <ul className={cardStyle.sidebarList}>
           {data.sidebar.map((item, index) => (
@@ -56,8 +75,8 @@ const Cards = () => {
               key={index}
               className={`${cardStyle.sidebarItem} ${
                 activeProgram === item ? cardStyle.active : ""
-              }`} // Add active class if the program is selected
-              onClick={() => filterCoursesByProgram(item)} // Set the active program
+              }`}
+              onClick={() => filterCoursesByProgram(item)}
             >
               <span className={cardStyle.sidebarIcon}>📘</span>
               <span className={cardStyle.sidebarText}>{item}</span>
@@ -100,7 +119,6 @@ const Cards = () => {
           ))}
         </div>
 
-        {/* View More Button */}
         {!showAll && data.courses.length > 9 && (
           <div className={cardStyle.viewMoreWrapper}>
             <button
@@ -112,7 +130,6 @@ const Cards = () => {
           </div>
         )}
 
-        {/* Extra Courses from ManagersCourseData.json */}
         {managersCourses.length > 0 && (
           <div className={cardStyle.extraCourses}>
             <h2 className={cardStyle.extraCoursesTitle}>
