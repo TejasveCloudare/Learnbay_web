@@ -239,8 +239,9 @@
     }
 
     .logoSection {
+        width: 100vw;
         position: absolute;
-        left: 50%;
+        left: 48vw;
         transform: translateX(-50%);
         /* flex-direction: row; */
         width: auto;
