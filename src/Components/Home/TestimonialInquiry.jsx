@@ -45,14 +45,16 @@ const TestimonialInquiry = () => {
           </h2>
           <p className={TestimonialStyles.quote}>"</p>
           <p className={TestimonialStyles.review}>
-            I had a great learning experience at Learnbay. The faculties here
-            are top notch. Right from enrollment to getting a good job, they
-            keep putting enormous efforts for each and every candidate. Thanks
-            to all the trainers, backend team.
+            I had a great learning experience at Edynoor. The faculties here are
+            top notch. Right from enrollment to getting a good job, they keep
+            putting enormous efforts for each and every candidate. Thanks to all
+            the trainers, backend team.
           </p>
           <p className={TestimonialStyles.author}>
-            <span className={TestimonialStyles.name}>Shravanthi A.</span> <br />
-            <span className={TestimonialStyles.role}>Data Scientist @TCS</span>
+            <span className={TestimonialStyles.name}>Tejasve G.</span> <br />
+            <span className={TestimonialStyles.role}>
+              Python Developer @Cloudare
+            </span>
           </p>
 
           <div className={TestimonialStyles.slider}>

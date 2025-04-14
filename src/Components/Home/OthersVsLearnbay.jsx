@@ -21,7 +21,7 @@ const OthersVsLearnbay = () => {
       {/* ===== Comparison Section ===== */}
       <div className={otlStyles.comparisonSection}>
         <div>
-          <h2 className={otlStyles.title}>Others Vs Learnbay</h2>
+          <h2 className={otlStyles.title}>Others Vs Edynoor</h2>
         </div>
         <div className={otlStyles.comparisonContainer}>
           {/* Left Column */}
@@ -39,7 +39,7 @@ const OthersVsLearnbay = () => {
           <div
             className={`${otlStyles.comparisonColumn} ${otlStyles.learnbayColumn}`}
           >
-            <h3 className={otlStyles.brand}>Learnbay</h3>
+            <h3 className={otlStyles.brand}>Edynoor</h3>
             <ul className={otlStyles.pointList}>
               <li>
                 <span>

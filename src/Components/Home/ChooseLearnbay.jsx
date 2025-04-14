@@ -47,7 +47,7 @@ const ChooseLearnbay = () => {
   return (
     <div className={ChoooseStyles.backgroundWrapper}>
       <h1 className={ChoooseStyles.mainHeading}>
-        Why choose <span className={ChoooseStyles.outlineText}>Learnbay?</span>
+        Why choose <span className={ChoooseStyles.outlineText}>Edynoor?</span>
       </h1>
 
       <div className={ChoooseStyles.reasons}>
