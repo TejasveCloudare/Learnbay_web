@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import cardStyle from "./Cards.module.css";
 import { FiMenu, FiX } from "react-icons/fi"; // You can use any icon lib
+import { FaAngleDoubleRight } from "react-icons/fa";
 
 const Cards = () => {
   const [data, setData] = useState({ sidebar: [], courses: [] });
@@ -45,10 +46,15 @@ const Cards = () => {
     <div className={cardStyle.container}>
       {/* Hamburger for mobile */}
       <div className={cardStyle.mobileHeader}>
-        <FiMenu
+        {/* <FiMenu
           className={cardStyle.hamburger}
           onClick={() => setIsSidebarOpen(true)}
-        />
+          
+        /> */}
+        <FaAngleDoubleRight
+          className={cardStyle.hamburger}
+          onClick={() => setIsSidebarOpen(true)}
+        />{" "}
       </div>
 
       {/* Overlay */}

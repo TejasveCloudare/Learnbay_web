@@ -30,7 +30,7 @@ function Footer() {
         <div className={footerStyles.logoSection}>
           <Link to="/" className={footerStyles.logoLink}>
             <img
-              src="/edynoor_logo_without_title-removebg.png"
+              src="/Grey Orange Simple Letter Logo.jpg"
               alt="edynoorLogo Logo"
               className={footerStyles.logo}
             />

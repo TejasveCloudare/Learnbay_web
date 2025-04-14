@@ -24,7 +24,9 @@
         "background": "linear-gradient(135deg, #1e3c72 0%, #2a5298 100%)",
         "logos": [
             "/ibm.png",
-            "/RE1Mu3b.png"
+            "/RE1Mu3b.png",
+            "/e and ict.jpg",
+            "/woolf.png"
         ]
     },
     {
@@ -36,6 +38,8 @@
         ],
         "background": "linear-gradient(135deg, #5433FF 0%, #20BDFF 100%)",
         "logos": [
+            "/ibm.png",
+            "/RE1Mu3b.png",
             "/e and ict.jpg",
             "/woolf.png"
         ]

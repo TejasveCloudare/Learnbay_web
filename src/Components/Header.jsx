@@ -27,12 +27,12 @@ function Header() {
           <div className={headerStyle.logoSection}>
             <Link to="/" className={headerStyle.logoLink}>
               <img
-                src="/edynoor_logo_without_title.jpg"
+                src="/Grey Orange Simple Letter Logo.jpg"
                 alt="edynoorLogo Logo"
                 className={headerStyle.logo}
               />
             </Link>
-            <h1 className={headerStyle.logoText}>Edynoor</h1>
+            {/* <h1 className={headerStyle.logoText}>Edynoor</h1> */}
           </div>
 
           {/* Courses Dropdown */}
