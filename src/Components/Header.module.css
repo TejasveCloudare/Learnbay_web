@@ -40,7 +40,7 @@
 .logo {
     width: 80px;
     /* Increased size */
-    height: 75px !important;
+    height: 70px !important;
     /* Increased size */
     object-fit: contain;
 }
@@ -259,8 +259,8 @@
     }
 
     .logo {
-        width: 40px;
-        height: 40px;
+        width: 100px;
+        height: 60px !important;
     }
 
     .logoText {
