@@ -16,6 +16,128 @@
     max-width: 1200px;
 }
 
+.leftRightWrapper {
+    display: flex;
+    width: 100%;
+    max-width: 1300px;
+    margin: 40px auto;
+    gap: 40px;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    justify-content: center;
+}
+
+.leftContainer {
+    flex: 1;
+    min-width: 280px;
+    max-width: 500px;
+    background-color: #ffffff;
+    border-radius: 12px;
+    padding: 30px 20px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+}
+
+.rightContainer {
+    flex: 2;
+    min-width: 300px;
+}
+
+.aboutContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.aboutP {
+    font-size: 16px;
+    line-height: 1.6;
+    color: #444;
+    text-align: justify;
+}
+
+.cloudareLogo {
+    /* margin-top: 10px; */
+    width: 100px;
+    height: auto;
+}
+
+.clientsSection {
+    margin-top: 40px;
+}
+
+.clientsContainer {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.clientSlider {
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+    margin-top: 20px;
+    background-color: aliceblue;
+}
+
+.clientTrack {
+    display: flex;
+    width: fit-content;
+    animation: clientScroll 25s linear infinite;
+}
+
+.clientSlide {
+    flex: 0 0 auto;
+    width: 140px;
+    margin: 0 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.clientSlide img {
+    max-width: 100px;
+    height: auto;
+    transition: transform 0.3s ease;
+}
+
+.clientSlide img:hover {
+    transform: scale(1.05);
+}
+
+@keyframes clientScroll {
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(-50%);
+    }
+}
+
+
+/* .clientItem {
+    text-align: center;
+    margin: 10px;
+}
+
+.clientLogo {
+    width: 100px;
+    height: auto;
+    margin-bottom: 10px;
+}
+
+.clientItem p {
+    font-weight: bold;
+} */
+
+.clientLogo {
+    width: 80px;
+    height: 80px;
+    object-fit: contain;
+    margin-bottom: 10px;
+}
+
 h2 {
     font-size: 24px;
     color: #333;
@@ -193,5 +315,24 @@ p {
 
     .benefitsList li {
         font-size: 14px;
+    }
+}
+
+@media (max-width: 768px) {
+    .leftRightWrapper {
+        flex-direction: column;
+        gap: 20px;
+        padding: 0 15px;
+    }
+
+    .leftContainer,
+    .rightContainer {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .aboutP {
+        font-size: 14px;
+        text-align: left;
     }
 }
