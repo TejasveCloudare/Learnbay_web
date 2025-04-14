@@ -1,0 +1,43 @@
+{
+    "courses": [
+        {
+            "title": "Data Science",
+            "subMenu": [
+                {
+                    "name": "Full Stack Data Science",
+                    "link": "/courses/full-stack-data-science"
+                },
+                {
+                    "name": "Data Science & AI",
+                    "link": "/courses/data-science-ai"
+                }
+            ]
+        },
+        {
+            "title": "Software Development",
+            "subMenu": [
+                {
+                    "name": "Full Stack Developer",
+                    "link": "/courses/full-stack-developer"
+                },
+                {
+                    "name": "MERN Stack",
+                    "link": "/courses/mern-stack"
+                }
+            ]
+        },
+        {
+            "title": "Cyber Security",
+            "subMenu": [
+                {
+                    "name": "Ethical Hacking",
+                    "link": "/courses/ethical-hacking"
+                },
+                {
+                    "name": "Advanced Cyber Security",
+                    "link": "/courses/advanced-cyber-security"
+                }
+            ]
+        }
+    ]
+}

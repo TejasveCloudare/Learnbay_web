@@ -1,28 +1,36 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
 import { FaChevronDown, FaChevronUp, FaBars, FaTimes } from "react-icons/fa";
 import headerStyle from "./Header.module.css";
 import ApplyModal from "./Home/ApplyModal";
 
 function Header() {
-  const [isOpen, setIsOpen] = useState(false);
+  const [isDropdownOpen, setDropdownOpen] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
   const [isModalOpen, setModalOpen] = useState(false);
+  const [menuData, setMenuData] = useState([]);
+  const dropdownRef = useRef(null);
+
+  useEffect(() => {
+    fetch("/menuData.json")
+      .then((res) => res.json())
+      .then((data) => setMenuData(data.courses))
+      .catch((err) => console.error("Error loading menu data:", err));
+  }, []);
 
   useEffect(() => {
     function handleClickOutside(event) {
-      if (!event.target.closest(`.${headerStyle.dropdownContainer}`)) {
-        setIsOpen(false);
+      if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
+        setDropdownOpen(false);
       }
     }
-    document.addEventListener("click", handleClickOutside);
-    return () => document.removeEventListener("click", handleClickOutside);
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => document.removeEventListener("mousedown", handleClickOutside);
   }, []);
 
   return (
     <>
       <nav className={headerStyle.navbar}>
-        {/* Logo + Courses */}
         <div className={headerStyle.leftSection}>
           <div className={headerStyle.logoSection}>
             <Link to="/" className={headerStyle.logoLink}>
@@ -32,41 +40,49 @@ function Header() {
                 className={headerStyle.logo}
               />
             </Link>
-            {/* <h1 className={headerStyle.logoText}>Edynoor</h1> */}
           </div>
 
           {/* Courses Dropdown */}
           <div
-            className={`${headerStyle.dropdownContainer}`}
-            onMouseEnter={() => setIsOpen(true)}
-            onMouseLeave={() => setIsOpen(false)}
+            className={headerStyle.dropdownContainer}
+            ref={dropdownRef}
+            onMouseEnter={() => setDropdownOpen(true)}
+            onMouseLeave={() => setDropdownOpen(false)}
           >
             <button
-              onClick={() => setIsOpen(!isOpen)}
+              onClick={() => setDropdownOpen((prev) => !prev)}
               className={headerStyle.dropdownButton}
             >
               Courses{" "}
-              {isOpen ? (
+              {isDropdownOpen ? (
                 <FaChevronUp className={headerStyle.icon} />
               ) : (
                 <FaChevronDown className={headerStyle.icon} />
               )}
             </button>
 
-            {isOpen && (
-              <div
-                className={headerStyle.dropdownMenu}
-                onMouseEnter={() => setIsOpen(true)}
-                onMouseLeave={() => setIsOpen(false)}
-              >
-                <Link to="/course1" className={headerStyle.dropdownItem}>
-                  Course 1
-                </Link>
-                <Link to="/course2" className={headerStyle.dropdownItem}>
-                  Course 2
-                </Link>
-              </div>
-            )}
+            <div
+              className={`${headerStyle.dropdownMenu} ${
+                isDropdownOpen ? headerStyle.dropdownVisible : ""
+              }`}
+            >
+              {menuData.map((menu, idx) => (
+                <div className={headerStyle.menuGroup} key={idx}>
+                  <div className={headerStyle.dropdownItem}>{menu.title}</div>
+                  <div className={headerStyle.subMenu}>
+                    {menu.subMenu.map((subItem, subIdx) => (
+                      <Link
+                        key={subIdx}
+                        to={subItem.link}
+                        className={headerStyle.subMenuItem}
+                      >
+                        {subItem.name}
+                      </Link>
+                    ))}
+                  </div>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
 
@@ -77,7 +93,7 @@ function Header() {
           </button>
         </div>
 
-        {/* Right Nav - Desktop */}
+        {/* Right Nav */}
         <div className={headerStyle.rightNav}>
           <Link to="/career-services" className={headerStyle.navLink}>
             Career Services
@@ -135,7 +151,6 @@ function Header() {
         )}
       </nav>
 
-      {/* Reusable Counselling Modal */}
       <ApplyModal showModal={isModalOpen} onClose={() => setModalOpen(false)} />
     </>
   );
