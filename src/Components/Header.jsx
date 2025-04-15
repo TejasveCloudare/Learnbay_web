@@ -9,6 +9,8 @@ function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [isModalOpen, setModalOpen] = useState(false);
   const [menuData, setMenuData] = useState([]);
+  const [sidebarOpen, setSidebarOpen] = useState(false);
+  const [expandedMenus, setExpandedMenus] = useState({});
   const dropdownRef = useRef(null);
 
   useEffect(() => {
@@ -28,6 +30,13 @@ function Header() {
     return () => document.removeEventListener("mousedown", handleClickOutside);
   }, []);
 
+  const toggleSubMenu = (index) => {
+    setExpandedMenus((prev) => ({
+      ...prev,
+      [index]: !prev[index],
+    }));
+  };
+
   return (
     <>
       <nav className={headerStyle.navbar}>
@@ -42,15 +51,16 @@ function Header() {
             </Link>
           </div>
 
-          {/* Courses Dropdown */}
-          <div
-            className={headerStyle.dropdownContainer}
-            ref={dropdownRef}
-            onMouseEnter={() => setDropdownOpen(true)}
-            onMouseLeave={() => setDropdownOpen(false)}
-          >
+          {/* Courses Button - Desktop Dropdown / Mobile Sidebar */}
+          <div className={headerStyle.dropdownContainer} ref={dropdownRef}>
             <button
-              onClick={() => setDropdownOpen((prev) => !prev)}
+              onClick={() => {
+                if (window.innerWidth <= 1024) {
+                  setSidebarOpen(true);
+                } else {
+                  setDropdownOpen((prev) => !prev);
+                }
+              }}
               className={headerStyle.dropdownButton}
             >
               Courses{" "}
@@ -61,6 +71,7 @@ function Header() {
               )}
             </button>
 
+            {/* Desktop Dropdown */}
             <div
               className={`${headerStyle.dropdownMenu} ${
                 isDropdownOpen ? headerStyle.dropdownVisible : ""
@@ -150,6 +161,49 @@ function Header() {
           </div>
         )}
       </nav>
+
+      {/* Mobile Sidebar for Courses */}
+      {sidebarOpen && (
+        <div className={headerStyle.sidebarOverlay}>
+          <div className={headerStyle.sidebar}>
+            <div className={headerStyle.sidebarHeader}>
+              <h3>Courses</h3>
+              <button onClick={() => setSidebarOpen(false)}>
+                <FaTimes />
+              </button>
+            </div>
+            <div className={headerStyle.sidebarContent}>
+              {menuData.map((menu, idx) => (
+                <div key={idx}>
+                  <div
+                    className={headerStyle.sidebarMenuTitle}
+                    onClick={() => toggleSubMenu(idx)}
+                  >
+                    {menu.title}
+                    <span>
+                      {expandedMenus[idx] ? <FaChevronUp /> : <FaChevronDown />}
+                    </span>
+                  </div>
+                  {expandedMenus[idx] && (
+                    <div className={headerStyle.sidebarSubMenu}>
+                      {menu.subMenu.map((subItem, subIdx) => (
+                        <Link
+                          key={subIdx}
+                          to={subItem.link}
+                          className={headerStyle.sidebarSubMenuItem}
+                          onClick={() => setSidebarOpen(false)}
+                        >
+                          {subItem.name}
+                        </Link>
+                      ))}
+                    </div>
+                  )}
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      )}
 
       <ApplyModal showModal={isModalOpen} onClose={() => setModalOpen(false)} />
     </>

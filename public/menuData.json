@@ -1,41 +1,37 @@
 {
-    "courses": [
-        {
+    "courses": [{
             "title": "Data Science",
-            "subMenu": [
-                {
+            "subMenu": [{
                     "name": "Full Stack Data Science",
-                    "link": "/courses/full-stack-data-science"
+                    "link": "/courses/data-science/full-stack"
                 },
                 {
-                    "name": "Data Science & AI",
-                    "link": "/courses/data-science-ai"
+                    "name": "Advanced Data Science",
+                    "link": "/courses/data-science/advanced"
                 }
             ]
         },
         {
-            "title": "Software Development",
-            "subMenu": [
-                {
-                    "name": "Full Stack Developer",
-                    "link": "/courses/full-stack-developer"
-                },
-                {
+            "title": "Web Development",
+            "subMenu": [{
                     "name": "MERN Stack",
-                    "link": "/courses/mern-stack"
+                    "link": "/courses/web-development/mern"
+                },
+                {
+                    "name": "Frontend Bootcamp",
+                    "link": "/courses/web-development/frontend"
                 }
             ]
         },
         {
-            "title": "Cyber Security",
-            "subMenu": [
-                {
-                    "name": "Ethical Hacking",
-                    "link": "/courses/ethical-hacking"
+            "title": "AI & ML",
+            "subMenu": [{
+                    "name": "AI for Beginners",
+                    "link": "/courses/ai-ml/beginners"
                 },
                 {
-                    "name": "Advanced Cyber Security",
-                    "link": "/courses/advanced-cyber-security"
+                    "name": "ML Advanced",
+                    "link": "/courses/ai-ml/advanced"
                 }
             ]
         }

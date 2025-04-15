@@ -21,7 +21,7 @@
     width: 100%;
     max-width: 1300px;
     margin: 40px auto;
-    gap: 40px;
+    /* gap: 40px; */
     flex-wrap: wrap;
     align-items: flex-start;
     justify-content: center;
@@ -83,7 +83,7 @@
 .clientTrack {
     display: flex;
     width: fit-content;
-    animation: clientScroll 25s linear infinite;
+    animation: clientScroll 10s linear infinite;
 }
 
 .clientSlide {
