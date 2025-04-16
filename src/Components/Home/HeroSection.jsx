@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import heroStyles from "./HeroSection.module.css";
 import ApplyModal from "./ApplyModal";
 import { ChevronLeft, ChevronRight } from "lucide-react";
+import banner from "../../Assets/JSON files/heroBanners.json";
 
 function HeroSection() {
   const [bannerData, setBannerData] = useState([]);
@@ -9,9 +10,7 @@ function HeroSection() {
   const [isModalOpen, setModalOpen] = useState(false);
 
   useEffect(() => {
-    fetch("/heroBanners.json")
-      .then((res) => res.json())
-      .then((data) => setBannerData(data));
+    setBannerData(banner);
   }, []);
 
   useEffect(() => {

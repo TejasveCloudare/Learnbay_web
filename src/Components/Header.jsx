@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { FaChevronDown, FaChevronUp, FaBars, FaTimes } from "react-icons/fa";
 import headerStyle from "./Header.module.css";
 import ApplyModal from "./Home/ApplyModal";
+import menu from "../../src/Assets/JSON files/menuData.json";
 
 function Header() {
   const [isDropdownOpen, setDropdownOpen] = useState(false);
@@ -14,10 +15,7 @@ function Header() {
   const dropdownRef = useRef(null);
 
   useEffect(() => {
-    fetch("/menuData.json")
-      .then((res) => res.json())
-      .then((data) => setMenuData(data.courses))
-      .catch((err) => console.error("Error loading menu data:", err));
+    setMenuData(menu.courses);
   }, []);
 
   useEffect(() => {

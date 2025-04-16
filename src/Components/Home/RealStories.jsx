@@ -1,5 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
 import styles from "./RealStories.module.css";
+import realStoriesdata from "../../Assets/JSON files/realStoriesData.json";
 
 const RealStories = () => {
   const [data, setData] = useState(null);
@@ -7,9 +8,7 @@ const RealStories = () => {
   const sliderRef = useRef(null);
 
   useEffect(() => {
-    fetch("/realStoriesData.json")
-      .then((res) => res.json())
-      .then((data) => setData(data));
+    setData(realStoriesdata);
   }, []);
 
   const getVisibleCardsCount = () => {

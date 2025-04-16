@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from "react";
 import tdStyles from "./TechnologiesAndDomains.module.css";
+import clientsData from "../../Assets/JSON files/clients.json";
+import techDomainsData from "../../Assets/JSON files/techDomains.json";
 
 const TechnologiesAndDomains = () => {
   const [techDomains, setTechDomains] = useState({
@@ -9,15 +11,20 @@ const TechnologiesAndDomains = () => {
   const [clients, setClients] = useState([]);
 
   useEffect(() => {
-    fetch("/techDomains.json")
-      .then((res) => res.json())
-      .then((data) => setTechDomains(data))
-      .catch((err) => console.error("Error loading techDomains:", err));
-    fetch("/clients.json")
-      .then((res) => res.json())
-      .then((data) => setClients(data))
-      .catch((err) => console.error("Error loading clients:", err));
+    setClients(clientsData);
+    setTechDomains(techDomainsData);
   }, []);
+
+  // useEffect(() => {
+  //   fetch("/techDomains.json")
+  //     .then((res) => res.json())
+  //     .then((data) => setTechDomains(data))
+  //     .catch((err) => console.error("Error loading techDomains:", err));
+  //   fetch("/clients.json")
+  //     .then((res) => res.json())
+  //     .then((data) => setClients(data))
+  //     .catch((err) => console.error("Error loading clients:", err));
+  // }, []);
 
   return (
     <div className={tdStyles.tdContainer}>

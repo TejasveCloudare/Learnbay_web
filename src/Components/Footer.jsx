@@ -8,15 +8,20 @@ import {
   FaYoutube,
 } from "react-icons/fa";
 
+import address from "../../src/Assets/JSON files/addresses.json";
+
 function Footer() {
   const [addresses, setAddresses] = useState([]);
-
   useEffect(() => {
-    fetch("/addresses.json")
-      .then((res) => res.json())
-      .then((data) => setAddresses(data))
-      .catch((err) => console.error("Failed to load addresses:", err));
+    setAddresses(address);
   }, []);
+
+  // useEffect(() => {
+  //   fetch("/addresses.json")
+  //     .then((res) => res.json())
+  //     .then((data) => setAddresses(data))
+  //     .catch((err) => console.error("Failed to load addresses:", err));
+  // }, []);
 
   return (
     <footer className={footerStyles.footer}>

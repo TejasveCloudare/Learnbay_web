@@ -1,15 +1,13 @@
 import React, { useEffect, useRef, useState } from "react";
 import ChoooseStyles from "./ChooseLearnbay.module.css";
+import reasonsData from "../../Assets/JSON files/reasonsData.json";
 
 const ChooseLearnbay = () => {
   const sectionRefs = useRef([]);
   const [reasons, setReasons] = useState([]);
 
   useEffect(() => {
-    fetch("/reasonsData.json")
-      .then((res) => res.json())
-      .then((data) => setReasons(data))
-      .catch((err) => console.error("Failed to load reasons data:", err));
+    setReasons(reasonsData);
   }, []);
 
   useEffect(() => {

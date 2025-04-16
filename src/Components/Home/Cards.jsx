@@ -2,6 +2,8 @@ import React, { useEffect, useState } from "react";
 import cardStyle from "./Cards.module.css";
 import { FiMenu, FiX } from "react-icons/fi"; // You can use any icon lib
 import { FaAngleDoubleRight } from "react-icons/fa";
+import courseData from "../../Assets/JSON files/CourseData.json";
+import ManagersCourseData from "../../Assets/JSON files/ManagersCourseData.json";
 
 const Cards = () => {
   const [data, setData] = useState({ sidebar: [], courses: [] });
@@ -10,26 +12,31 @@ const Cards = () => {
   const [activeProgram, setActiveProgram] = useState("");
   const [isSidebarOpen, setIsSidebarOpen] = useState(false); // For responsive
 
-  useEffect(() => {
-    fetch("/CourseData.json")
-      .then((response) => {
-        if (!response.ok)
-          throw new Error(`HTTP error! Status: ${response.status}`);
-        return response.json();
-      })
-      .then((json) => setData(json))
-      .catch((error) => console.error("Error loading CourseData.json:", error));
+  // useEffect(() => {
+  //   fetch("/CourseData.json")
+  //     .then((response) => {
+  //       if (!response.ok)
+  //         throw new Error(`HTTP error! Status: ${response.status}`);
+  //       return response.json();
+  //     })
+  //     .then((json) => setData(json))
+  //     .catch((error) => console.error("Error loading CourseData.json:", error));
 
-    fetch("/ManagersCourseData.json")
-      .then((response) => {
-        if (!response.ok)
-          throw new Error(`HTTP error! Status: ${response.status}`);
-        return response.json();
-      })
-      .then((json) => setManagersCourses(json.courses))
-      .catch((error) =>
-        console.error("Error loading ManagersCourseData.json:", error)
-      );
+  //   fetch("/ManagersCourseData.json")
+  //     .then((response) => {
+  //       if (!response.ok)
+  //         throw new Error(`HTTP error! Status: ${response.status}`);
+  //       return response.json();
+  //     })
+  //     .then((json) => setManagersCourses(json.courses))
+  //     .catch((error) =>
+  //       console.error("Error loading ManagersCourseData.json:", error)
+  //     );
+  // }, []);
+
+  useEffect(() => {
+    setData(courseData);
+    setManagersCourses(ManagersCourseData);
   }, []);
 
   const filterCoursesByProgram = (program) => {

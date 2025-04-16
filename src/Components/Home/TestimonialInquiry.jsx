@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import TestimonialStyles from "./TestimonialInquiry.module.css";
+import testimonialsData from "../../Assets/JSON files/testimonialSliderData.json";
 
 const TestimonialInquiry = () => {
   const [formData, setFormData] = useState({
@@ -13,10 +14,7 @@ const TestimonialInquiry = () => {
   const [sliderData, setSliderData] = useState([]);
 
   useEffect(() => {
-    fetch("/testimonialSliderData.json")
-      .then((res) => res.json())
-      .then((data) => setSliderData(data.sliderData))
-      .catch((err) => console.error("Slider data fetch error:", err));
+    setSliderData(testimonialsData.sliderData);
   }, []);
 
   const handleChange = (e) => {
