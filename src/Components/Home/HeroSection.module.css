@@ -314,6 +314,10 @@
     align-items: center;
 }
 
+.bulletContainer {
+    height: 10vh;
+}
+
 @media screen and (max-width: 1024px) {
     .insideContainer {
         flex-direction: column;
