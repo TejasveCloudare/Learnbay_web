@@ -1,14 +1,12 @@
 import React, { useEffect, useState } from "react";
 import CourseRatedStyles from "./CourseRated.module.css";
+import courseRatedData from "../../Assets/JSON files/courseRatedData.json";
 
 const CourseRated = () => {
   const [ratings, setRatings] = useState([]);
 
   useEffect(() => {
-    fetch("/courseRatedData.json")
-      .then((res) => res.json())
-      .then((data) => setRatings(data.courseRated))
-      .catch((err) => console.error("Error loading course rated data:", err));
+    setRatings(courseRatedData.courseRated);
   }, []);
 
   return (
