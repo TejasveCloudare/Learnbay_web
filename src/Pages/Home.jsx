@@ -15,7 +15,7 @@ function Home() {
       <TechnologiesAndDomains />
       <Cards />
       <ChooseLearnbay />
-      <RealStories />
+      {/* <RealStories /> */}
       <CourseRated />
       <TestimonialInquiry />
       <OthersVsLearnbay />

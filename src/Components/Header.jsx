@@ -104,13 +104,19 @@ function Header() {
 
         {/* Right Nav */}
         <div className={headerStyle.rightNav}>
-          <Link to="/career-services" className={headerStyle.navLink}>
-            Career Services
+          <Link to="/about" className={headerStyle.navLink}>
+            About Us
           </Link>
-          <Link to="/alumni-reviews" className={headerStyle.navLink}>
+          <a
+            href="https://blogs.cloudare.in/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className={headerStyle.navLink}
+          >
+            {" "}
             Alumni Reviews
-          </Link>
-          <Link to="/project-lab" className={headerStyle.navLink}>
+          </a>
+          <Link to="/" className={headerStyle.navLink}>
             ProjectLab
           </Link>
           <button

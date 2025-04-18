@@ -1,0 +1,19 @@
+{
+    "heading": "Meet Our Founders",
+    "founders": [
+        {
+            "name": "Anshika Grg Arya",
+            "title": "Founder of Edynoor & Co-Founder at Cloudare",
+            "image": "Anshika.jpg",
+            "quote": "Empowering minds to lead through creativity and vision.",
+            "linkedin": "https://www.linkedin.com/in/anshikagarg/"
+        },
+        {
+            "name": "Sailesh Arya",
+            "title": "Founder, CEO and Technology Head at Cloudare",
+            "image": "sailesh.jpg",
+            "quote": "Turning ideas into impactful technology solutions.",
+            "linkedin": "https://www.linkedin.com/in/sailesharya/"
+        }
+    ]
+}
