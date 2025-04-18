@@ -131,20 +131,18 @@ function Header() {
         {menuOpen && (
           <div className={headerStyle.mobileMenu}>
             <div className={headerStyle.mobileMenuContent}>
-              <Link
-                to="/career-services"
-                className={headerStyle.mobileLink}
-                onClick={() => setMenuOpen(false)}
-              >
-                Career Services
+              <Link to="/about" className={headerStyle.mobileLink}>
+                About Us
               </Link>
-              <Link
-                to="/alumni-reviews"
+              <a
+                href="https://blogs.cloudare.in/"
+                target="_blank"
+                rel="noopener noreferrer"
                 className={headerStyle.mobileLink}
-                onClick={() => setMenuOpen(false)}
               >
+                {" "}
                 Alumni Reviews
-              </Link>
+              </a>
               <Link
                 to="/project-lab"
                 className={headerStyle.mobileLink}
