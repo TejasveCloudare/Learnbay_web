@@ -16,11 +16,14 @@ const WhatSection = () => {
         className={whatStyles.container}
         initial={{ opacity: 0, y: 40 }}
         animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8 }}
+        transition={{ duration: 0.5 }}
       >
         <div className={whatStyles.left}>
           <h2 className={whatStyles.heading}>{data.heading}</h2>
-          <p className={whatStyles.content}>{data.content}</p>
+          <p
+            className={whatStyles.content}
+            dangerouslySetInnerHTML={{ __html: data.content }}
+          ></p>
         </div>
         <div className={whatStyles.right}>
           <img

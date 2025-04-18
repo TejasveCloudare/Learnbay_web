@@ -1,7 +1,6 @@
 .whatSection {
     background: linear-gradient(135deg, #ffffff 0%, #ff800d 100%);
     padding: 90px 20px;
-    color: #ffffff;
     transition: all 0.3s ease;
 }
 
@@ -34,6 +33,7 @@
     margin-bottom: 20px;
     font-weight: 700;
     letter-spacing: 1px;
+    color: #000;
 }
 
 .content {
@@ -53,4 +53,20 @@
 
 .image:hover {
     transform: scale(1.05);
+}
+
+.highlight {
+    color: #ff4d00;
+    font-weight: 700;
+}
+
+.whatSectionLink {
+    color: #004aad;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.whatSectionLink:hover {
+    text-decoration: underline;
+    color: #002d72;
 }

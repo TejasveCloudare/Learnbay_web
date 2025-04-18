@@ -1,3 +1,14 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.whatSectionLink {
+    color: #004aad;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.whatSectionLink:hover {
+    text-decoration: underline;
+    color: #002d72;
+}
