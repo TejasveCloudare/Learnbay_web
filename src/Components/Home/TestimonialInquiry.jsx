@@ -55,7 +55,7 @@ const TestimonialInquiry = () => {
             </span>
           </p>
 
-          <div className={TestimonialStyles.slider}>
+          {/* <div className={TestimonialStyles.slider}>
             <div className={TestimonialStyles.slideTrack}>
               {sliderData.map((item, idx) => (
                 <div key={idx} className={TestimonialStyles.slide}>
@@ -63,7 +63,7 @@ const TestimonialInquiry = () => {
                 </div>
               ))}
             </div>
-          </div>
+          </div> */}
         </div>
 
         <div className={TestimonialStyles.right}>

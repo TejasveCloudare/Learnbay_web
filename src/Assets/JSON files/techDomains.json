@@ -2,41 +2,49 @@
     "leftToRight": [
         {
             "name": "Data Science",
-            "icon": "/data-science.jpg"
+            "icon": "/DS.avif"
         },
         {
             "name": "Data Analytics",
-            "icon": "/data-analytics.png"
+            "icon": "/DA.avif"
         },
         {
             "name": "Business Analytics",
-            "icon": "/business-analytics.png"
+            "icon": "/BA.avif"
         },
         {
-            "name": "Cloud Computing",
-            "icon": "/cloud-computing.png"
+            "name": "Artificial Intelligence",
+            "icon": "/AI.avif"
         },
         {
-            "name": "DevOps",
-            "icon": "/devops.png"
+            "name": "Machine Learning",
+            "icon": "/ML.avif"
         }
     ],
     "rightToLeft": [
         {
             "name": "BFSI",
-            "icon": "/bfsi.png"
+            "icon": "/BFSI.avif"
         },
         {
             "name": "Healthcare",
-            "icon": "/healthcare.png"
+            "icon": "/HC.avif"
         },
         {
             "name": "Marketing",
-            "icon": "/marketing.png"
+            "icon": "/Marketing.avif"
         },
         {
             "name": "Gen AI",
-            "icon": "/gen-ai.png"
+            "icon": "/GENAI.avif"
+        },
+        {
+            "name": "Cloud Compunting",
+            "icon": "/CC.avif"
+        },
+        {
+            "name": "DevOps",
+            "icon": "/Devops.avif"
         }
     ]
 }

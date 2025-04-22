@@ -7,13 +7,19 @@ const OthersVsLearnbay = () => {
       {/* ===== Top Company Logos Section ===== */}
       <div className={otlStyles.logoSection}>
         <div className={otlStyles.companyLogos}>
-          <img src="/jp-morgan-logo.png" alt="JP Morgan" />
-          <img src="/kpmg-logo.png" alt="KPMG" />
-          <img src="/microsoft-logo.png" alt="Microsoft" />
-          <img src="/samsung-logo.png" alt="Samsung" />
-          <img src="/bosch-logo.png" alt="Bosch" />
-          <img src="/deloitte-logo.png" alt="Deloitte" />
-          <img src="/pwc-logo.png" alt="PwC" />
+          {[
+            "jpmorgan",
+            "kpmGG",
+            "microsoft",
+            "samsung",
+            "boch",
+            "deloitte",
+            "PWC",
+          ].map((logo) => (
+            <div key={logo} className={otlStyles.logoBox}>
+              <img src={`/${logo}.avif`} alt={logo} />
+            </div>
+          ))}
         </div>
         <p className={otlStyles.hiringText}>Get hired at 250+ companies</p>
       </div>
