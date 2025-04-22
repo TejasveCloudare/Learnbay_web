@@ -3,11 +3,13 @@ import heroStyles from "./HeroSection.module.css";
 import ApplyModal from "./ApplyModal";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import banner from "../../Assets/JSON files/heroBanners.json";
+import { useInView } from "react-intersection-observer";
 
 function HeroSection() {
   const [bannerData, setBannerData] = useState([]);
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isModalOpen, setModalOpen] = useState(false);
+  const [ref, inView] = useInView({ triggerOnce: true, threshold: 0.2 });
 
   useEffect(() => {
     setBannerData(banner);
@@ -39,8 +41,11 @@ function HeroSection() {
   return (
     <>
       <div
-        className={heroStyles.heroSection}
+        className={`${heroStyles.heroSection} ${
+          inView ? heroStyles.fadeIn : ""
+        }`}
         style={{ background: currentBanner.background }}
+        ref={ref}
       >
         <div className={heroStyles.slideControls}>
           <button className={heroStyles.arrowBtn} onClick={handlePrev}>
@@ -52,7 +57,7 @@ function HeroSection() {
         </div>
 
         <div className={heroStyles.insideContainer}>
-          <div className={heroStyles.leftContainer}>
+          <div className={`${heroStyles.leftContainer} ${heroStyles.slideUp}`}>
             <div className={heroStyles.headText}>
               <h1 className={heroStyles.heroTitle}>
                 {currentBanner.title.split(currentBanner.highlight)[0]}
@@ -93,7 +98,9 @@ function HeroSection() {
             </div>
           </div>
 
-          <div className={heroStyles.rightContainer}>
+          <div
+            className={`${heroStyles.rightContainer} ${heroStyles.slideRight}`}
+          >
             <aside className={heroStyles.eligibilityCard}>
               <div className={heroStyles.rightUp}>
                 <h3 className={heroStyles.checkEligibility}>

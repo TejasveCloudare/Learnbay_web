@@ -420,3 +420,57 @@
         padding: 0 0.5rem;
     }
 }
+
+
+/* Animations */
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(40px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideRight {
+    from {
+        opacity: 0;
+        transform: translateX(40px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+
+/* Applied classes */
+
+.fadeIn {
+    animation: fadeIn 1s ease-out forwards;
+}
+
+.slideUp {
+    animation: slideUp 1s ease-out forwards;
+}
+
+.slideRight {
+    animation: slideRight 1.2s ease-out forwards;
+}
