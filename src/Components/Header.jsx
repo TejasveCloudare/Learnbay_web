@@ -4,6 +4,7 @@ import { FaChevronDown, FaChevronUp, FaBars, FaTimes } from "react-icons/fa";
 import headerStyle from "./Header.module.css";
 import ApplyModal from "./Home/ApplyModal";
 import menu from "../../src/Assets/JSON files/menuData.json";
+import { useNavigate, useLocation } from "react-router-dom";
 
 function Header() {
   const [isDropdownOpen, setDropdownOpen] = useState(false);
@@ -13,6 +14,26 @@ function Header() {
   const [sidebarOpen, setSidebarOpen] = useState(false);
   const [expandedMenus, setExpandedMenus] = useState({});
   const dropdownRef = useRef(null);
+
+  const navigate = useNavigate();
+  const location = useLocation();
+
+  const handleSubMenuClick = () => {
+    if (location.pathname === "/") {
+      const section = document.getElementById("cardsSection");
+      if (section) {
+        section.scrollIntoView({ behavior: "smooth" });
+      }
+    } else {
+      navigate("/#cardsSection");
+      setTimeout(() => {
+        const section = document.getElementById("cardsSection");
+        if (section) {
+          section.scrollIntoView({ behavior: "smooth" });
+        }
+      }, 100); // allow time for route change
+    }
+  };
 
   useEffect(() => {
     setMenuData(menu.courses);
@@ -80,7 +101,14 @@ function Header() {
                   <div className={headerStyle.dropdownItem}>{menu.title}</div>
                   <div className={headerStyle.subMenu}>
                     {menu.subMenu.map((subItem, subIdx) => (
-                      <div key={subIdx} className={headerStyle.subMenuItem}>
+                      <div
+                        key={subIdx}
+                        className={headerStyle.subMenuItem}
+                        onClick={() => {
+                          handleSubMenuClick();
+                          setDropdownOpen(false);
+                        }}
+                      >
                         <strong>{subItem.name}</strong>
                         <p style={{ margin: "4px 0" }}>{subItem.duration}</p>
                         <p style={{ margin: "4px 0", fontStyle: "italic" }}>
@@ -190,7 +218,10 @@ function Header() {
                         <div
                           key={subIdx}
                           className={headerStyle.sidebarSubMenuItem}
-                          onClick={() => setSidebarOpen(false)}
+                          onClick={() => {
+                            handleSubMenuClick();
+                            setSidebarOpen(false);
+                          }}
                         >
                           <strong>{subItem.name}</strong>
                           <p style={{ margin: "4px 0" }}>{subItem.duration}</p>

@@ -16,7 +16,9 @@ function Home() {
       <HeroSection />
       <TechnologiesAndDomains />
       <MissionVisionSection />
-      <Cards />
+      <div id="cardsSection">
+        <Cards />
+      </div>
       {/* <ChooseLearnbay /> */}
       <ChooseEdynoor />
       {/* <RealStories /> */}
