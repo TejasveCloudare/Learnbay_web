@@ -1,70 +1,74 @@
 import React, { useEffect, useState } from "react";
 import cardStyle from "./Cards.module.css";
-import { FiMenu, FiX } from "react-icons/fi"; // You can use any icon lib
+import { FiX } from "react-icons/fi";
 import { FaAngleDoubleRight } from "react-icons/fa";
 import courseData from "../../Assets/JSON files/CourseData.json";
 import ManagersCourseData from "../../Assets/JSON files/ManagersCourseData.json";
+import BrochureModal from "./BrochureModal";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 const Cards = () => {
   const [data, setData] = useState({ sidebar: [], courses: [] });
   const [managersCourses, setManagersCourses] = useState([]);
   const [showAll, setShowAll] = useState(false);
   const [activeProgram, setActiveProgram] = useState("");
-  const [isSidebarOpen, setIsSidebarOpen] = useState(false); // For responsive
-
-  // useEffect(() => {
-  //   fetch("/CourseData.json")
-  //     .then((response) => {
-  //       if (!response.ok)
-  //         throw new Error(`HTTP error! Status: ${response.status}`);
-  //       return response.json();
-  //     })
-  //     .then((json) => setData(json))
-  //     .catch((error) => console.error("Error loading CourseData.json:", error));
-
-  //   fetch("/ManagersCourseData.json")
-  //     .then((response) => {
-  //       if (!response.ok)
-  //         throw new Error(`HTTP error! Status: ${response.status}`);
-  //       return response.json();
-  //     })
-  //     .then((json) => setManagersCourses(json.courses))
-  //     .catch((error) =>
-  //       console.error("Error loading ManagersCourseData.json:", error)
-  //     );
-  // }, []);
+  const [isSidebarOpen, setIsSidebarOpen] = useState(false);
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [selectedCourse, setSelectedCourse] = useState(null);
+  const [showModal, setShowModal] = useState(false);
 
   useEffect(() => {
     setData(courseData);
     setManagersCourses(ManagersCourseData);
+    AOS.init({ duration: 800, once: true });
   }, []);
 
   const filterCoursesByProgram = (program) => {
     setActiveProgram(program);
-    setIsSidebarOpen(false); // Close sidebar on mobile click
+    setShowAll(program === "Certification Courses");
+    setIsSidebarOpen(false);
   };
 
   const filteredCourses =
-    activeProgram === ""
+    activeProgram === "" || showAll
       ? data.courses
-      : data.courses.filter((course) => course.target.includes(activeProgram));
+      : data.courses.filter((course) =>
+          course.target.toLowerCase().includes(activeProgram.toLowerCase())
+        );
+
+  const handleDownload = () => {
+    const link = document.createElement("a");
+    link.href = "/brochure.pdf";
+    link.download = "brochure.pdf";
+    link.click();
+  };
+
+  const handleBrochureClick = (course) => {
+    setSelectedCourse(course);
+    setIsModalOpen(true);
+  };
+
+  const handleFormSubmit = (event) => {
+    event.preventDefault();
+    if (selectedCourse) {
+      const link = document.createElement("a");
+      link.href = "/src/Assets/brochure/brochure.pdf";
+      link.download = "brochure.pdf";
+      link.click();
+    }
+    setIsModalOpen(false);
+  };
 
   return (
-    <div className={cardStyle.container}>
-      {/* Hamburger for mobile */}
+    <div className={`${cardStyle.container} ${cardStyle.fadeIn}`}>
       <div className={cardStyle.mobileHeader}>
-        {/* <FiMenu
-          className={cardStyle.hamburger}
-          onClick={() => setIsSidebarOpen(true)}
-          
-        /> */}
         <FaAngleDoubleRight
           className={cardStyle.hamburger}
           onClick={() => setIsSidebarOpen(true)}
-        />{" "}
+        />
       </div>
 
-      {/* Overlay */}
       {isSidebarOpen && (
         <div
           className={cardStyle.overlay}
@@ -72,7 +76,6 @@ const Cards = () => {
         ></div>
       )}
 
-      {/* Sidebar */}
       <aside
         className={`${cardStyle.sidebar} ${
           isSidebarOpen ? cardStyle.showSidebar : ""
@@ -101,11 +104,15 @@ const Cards = () => {
         </ul>
       </aside>
 
-      {/* Cards Section */}
       <main className={cardStyle.cardsSection}>
         <div className={cardStyle.cardGrid}>
           {filteredCourses.map((course, index) => (
-            <div key={index} className={cardStyle.card}>
+            <div
+              key={index}
+              className={cardStyle.card}
+              data-aos="fade-up"
+              data-aos-delay={index * 100}
+            >
               {course.image && (
                 <div className={cardStyle.imageWrapper}>
                   <img
@@ -115,9 +122,9 @@ const Cards = () => {
                   />
                 </div>
               )}
-              <div className={cardStyle.cardHeader}>
+              {/* <div className={cardStyle.cardHeader}>
                 <span className={cardStyle.provider}>{course.provider}</span>
-              </div>
+              </div> */}
               <h3 className={cardStyle.title}>{course.title}</h3>
               <ul className={cardStyle.details}>
                 <li>📅 {course.duration}</li>
@@ -125,14 +132,19 @@ const Cards = () => {
                 <li>👨‍💼 {course.target}</li>
               </ul>
               <div className={cardStyle.actions}>
-                <button className={cardStyle.brochureBtn}>Brochure ⬇</button>
+                <button
+                  className={cardStyle.brochureBtn}
+                  onClick={() => setShowModal(true)}
+                >
+                  Brochure ⬇
+                </button>
                 <button className={cardStyle.viewBtn}>View Details</button>
               </div>
             </div>
           ))}
         </div>
 
-        {!showAll && data.courses.length > 9 && (
+        {!showAll && filteredCourses.length > 9 && (
           <div className={cardStyle.viewMoreWrapper}>
             <button
               className={cardStyle.viewMoreBtn}
@@ -150,7 +162,12 @@ const Cards = () => {
             </h2>
             <div className={cardStyle.cardGrid}>
               {managersCourses.map((course, index) => (
-                <div key={index} className={cardStyle.card}>
+                <div
+                  key={index}
+                  className={cardStyle.card}
+                  data-aos="fade-up"
+                  data-aos-delay={index * 100}
+                >
                   {course.image && (
                     <div className={cardStyle.imageWrapper}>
                       <img
@@ -172,7 +189,10 @@ const Cards = () => {
                     <li>👨‍💼 {course.target}</li>
                   </ul>
                   <div className={cardStyle.actions}>
-                    <button className={cardStyle.brochureBtn}>
+                    <button
+                      className={cardStyle.brochureBtn}
+                      onClick={() => handleBrochureClick(course)}
+                    >
                       Brochure ⬇
                     </button>
                     <button className={cardStyle.viewBtn}>View Details</button>
@@ -183,6 +203,12 @@ const Cards = () => {
           </div>
         )}
       </main>
+
+      <BrochureModal
+        showModal={showModal}
+        onClose={() => setShowModal(false)}
+        onDownload={handleDownload}
+      />
     </div>
   );
 };

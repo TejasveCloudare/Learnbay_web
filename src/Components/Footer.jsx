@@ -29,7 +29,7 @@ function Footer() {
         <div className={footerStyles.footerColumn}>
           <Link to="/" className={footerStyles.logoLink}>
             <img
-              src="/Grey Orange Simple Letter Logo.jpg"
+              src="/Grey Orange Simple Letter Logo.png"
               alt="edynoor logo"
               className={footerStyles.logo}
             />

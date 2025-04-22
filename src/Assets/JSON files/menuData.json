@@ -1,37 +1,31 @@
 {
-    "courses": [{
-            "title": "Data Science",
-            "subMenu": [{
-                    "name": "Full Stack Data Science",
-                    "link": "/courses/data-science/full-stack"
-                },
-                {
-                    "name": "Advanced Data Science",
-                    "link": "/courses/data-science/advanced"
-                }
-            ]
-        },
+    "courses": [
         {
-            "title": "Web Development",
-            "subMenu": [{
-                    "name": "MERN Stack",
-                    "link": "/courses/web-development/mern"
+            "title": "Certification Courses",
+            "subMenu": [
+                {
+                    "name": "Data Science and Generative AI Program",
+                    "provider": "Edynoor",
+                    "image": "Grey Orange Simple Letter Logo1.jpg",
+                    "duration": "13 months | 4 Capstone Projects",
+                    "certification": "Certification from Edynoor",
+                    "target": "For Working Professionals"
                 },
                 {
-                    "name": "Frontend Bootcamp",
-                    "link": "/courses/web-development/frontend"
-                }
-            ]
-        },
-        {
-            "title": "AI & ML",
-            "subMenu": [{
-                    "name": "AI for Beginners",
-                    "link": "/courses/ai-ml/beginners"
+                    "name": "Advance Data Scientist and AI",
+                    "provider": "Edynoor",
+                    "image": "Grey Orange Simple Letter Logo1.jpg",
+                    "duration": "5 to 6 months",
+                    "certification": "Coming Soon",
+                    "target": "Artificial Intelligence and Machine Learning"
                 },
                 {
-                    "name": "ML Advanced",
-                    "link": "/courses/ai-ml/advanced"
+                    "name": "Artificial Intelligence and Machine Learning",
+                    "provider": "Edynoor",
+                    "image": "Grey Orange Simple Letter Logo1.jpg",
+                    "duration": "6 to 8 months",
+                    "certification": "Coming Soon",
+                    "target": "Artificial Intelligence and Machine Learning"
                 }
             ]
         }

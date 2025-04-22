@@ -15,17 +15,6 @@ const TechnologiesAndDomains = () => {
     setTechDomains(techDomainsData);
   }, []);
 
-  // useEffect(() => {
-  //   fetch("/techDomains.json")
-  //     .then((res) => res.json())
-  //     .then((data) => setTechDomains(data))
-  //     .catch((err) => console.error("Error loading techDomains:", err));
-  //   fetch("/clients.json")
-  //     .then((res) => res.json())
-  //     .then((data) => setClients(data))
-  //     .catch((err) => console.error("Error loading clients:", err));
-  // }, []);
-
   return (
     <div className={tdStyles.tdContainer}>
       <div className={tdStyles.leftRightWrapper}>

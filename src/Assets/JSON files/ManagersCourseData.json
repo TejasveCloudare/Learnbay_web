@@ -1,19 +1,6 @@
 {
-    "courses": [{
-            "title": "GenAI Certification for Managers & Tech Leaders",
-            "provider": "E&ICT Academy IIT Guwahati",
-            "duration": "4 months",
-            "certification": "Certification from IIT Guwahati",
-            "target": "For Managers & Tech Leaders",
-            "image": "/images/genai_managers.png"
-        },
-        {
-            "title": "GenAI Developer Certification for Professionals",
-            "provider": "E&ICT Academy IIT Guwahati",
-            "duration": "3 months",
-            "certification": "Certification from IIT Guwahati",
-            "target": "For Tech Professionals & Developers",
-            "image": "/images/genai_developers.png"
-        }
+    "courses": [
+        {},
+        {}
     ]
 }

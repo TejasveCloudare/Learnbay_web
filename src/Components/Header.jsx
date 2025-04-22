@@ -42,14 +42,14 @@ function Header() {
           <div className={headerStyle.logoSection}>
             <Link to="/" className={headerStyle.logoLink}>
               <img
-                src="/Grey Orange Simple Letter Logo.jpg"
+                src="/Grey Orange Simple Letter Logo.png"
                 alt="edynoorLogo Logo"
                 className={headerStyle.logo}
               />
             </Link>
           </div>
 
-          {/* Courses Button - Desktop Dropdown / Mobile Sidebar */}
+          {/* Courses Button */}
           <div className={headerStyle.dropdownContainer} ref={dropdownRef}>
             <button
               onClick={() => {
@@ -80,13 +80,13 @@ function Header() {
                   <div className={headerStyle.dropdownItem}>{menu.title}</div>
                   <div className={headerStyle.subMenu}>
                     {menu.subMenu.map((subItem, subIdx) => (
-                      <Link
-                        key={subIdx}
-                        to={subItem.link}
-                        className={headerStyle.subMenuItem}
-                      >
-                        {subItem.name}
-                      </Link>
+                      <div key={subIdx} className={headerStyle.subMenuItem}>
+                        <strong>{subItem.name}</strong>
+                        <p style={{ margin: "4px 0" }}>{subItem.duration}</p>
+                        <p style={{ margin: "4px 0", fontStyle: "italic" }}>
+                          {subItem.certification}
+                        </p>
+                      </div>
                     ))}
                   </div>
                 </div>
@@ -113,7 +113,6 @@ function Header() {
             rel="noopener noreferrer"
             className={headerStyle.navLink}
           >
-            {" "}
             Alumni Reviews
           </a>
           <Link to="/" className={headerStyle.navLink}>
@@ -140,7 +139,6 @@ function Header() {
                 rel="noopener noreferrer"
                 className={headerStyle.mobileLink}
               >
-                {" "}
                 Alumni Reviews
               </a>
               <Link
@@ -189,14 +187,17 @@ function Header() {
                   {expandedMenus[idx] && (
                     <div className={headerStyle.sidebarSubMenu}>
                       {menu.subMenu.map((subItem, subIdx) => (
-                        <Link
+                        <div
                           key={subIdx}
-                          to={subItem.link}
                           className={headerStyle.sidebarSubMenuItem}
                           onClick={() => setSidebarOpen(false)}
                         >
-                          {subItem.name}
-                        </Link>
+                          <strong>{subItem.name}</strong>
+                          <p style={{ margin: "4px 0" }}>{subItem.duration}</p>
+                          <p style={{ margin: "4px 0", fontStyle: "italic" }}>
+                            {subItem.certification}
+                          </p>
+                        </div>
                       ))}
                     </div>
                   )}

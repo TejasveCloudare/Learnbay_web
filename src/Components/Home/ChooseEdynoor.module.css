@@ -1,0 +1,298 @@
+.backgroundWrapper {
+    /* background: radial-gradient(circle at 10% 10%, rgba(2, 55, 70, 10) 1%, transparent 40%), radial-gradient(circle at 90% 80%, rgba(142, 54, 7, 0.3) 2%, transparent 30%), #212121; */
+    min-height: 100vh;
+    padding: 2rem;
+    color: #494949;
+    /* optional: makes text visible on dark background */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* background: linear-gradient(135deg, rgb(30, 60, 114) 0%, rgb(42, 82, 152) 100%); */
+    background: linear-gradient(to right, #fff4e6, #ff8c42);
+}
+
+.mainHeading {
+    color: #494949;
+    text-align: center;
+    font-size: clamp(2.5rem, 5vw, 4rem);
+    font-style: normal;
+    font-weight: 400;
+    line-height: 1.5;
+    padding: 5%;
+}
+
+.outlineText {
+    font-size: clamp(2.5rem, 5vw, 4rem);
+    font-weight: 700;
+    color: transparent;
+    -webkit-text-stroke: 1px #494949;
+}
+
+.reasons {
+    display: flex;
+    flex-direction: column;
+    gap: 10vh;
+    width: 60%;
+}
+
+.trainingSection {
+    display: flex;
+    max-width: 1100px;
+    margin: 0 auto;
+    gap: 2rem;
+    align-items: flex-start;
+}
+
+.specializeSection {
+    display: flex;
+    max-width: 1100px;
+    margin: 0 auto;
+    gap: 2rem;
+    align-items: flex-start;
+}
+
+.iconColumn {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.iconCircle {
+    width: 55px;
+    height: 55px;
+    background-color: transparent;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.iconCircle img {
+    /* width: 28px;
+    height: 28px; */
+}
+
+.verticalLine {
+    width: 1px;
+    height: 35vh;
+    background-color: #494949;
+    margin-top: 10px;
+    position: relative;
+    /* margin-left: 25px; */
+    /* optional: center under the icon */
+}
+
+.verticalLine::after {
+    content: "";
+    position: absolute;
+    bottom: -6px;
+    left: 50%;
+    transform: translateX(-50%);
+    border-left: 6px solid transparent;
+    border-right: 6px solid transparent;
+    border-top: 8px solid white;
+    /* arrow pointing down */
+}
+
+.textColumn {
+    flex: 1;
+}
+
+.subHeading {
+    color: #494949;
+    font-size: 2.5rem;
+    font-style: normal;
+    font-weight: 600;
+}
+
+.description {
+    font-size: 1.5rem;
+    color: #494949;
+    margin-bottom: 1rem;
+    /* width: 90%; */
+}
+
+.modeItem {
+    display: grid;
+    grid-template-columns: 45% 40%;
+    border-radius: 54px;
+    background: rgba(254, 122, 54, .1);
+    grid-gap: 20px;
+    gap: 20px;
+    padding: 10px;
+    width: 434px;
+    justify-content: space-between;
+    margin: 20px 0;
+}
+
+.modeItem img {
+    width: 28px;
+    height: 28px;
+}
+
+.importantNote {
+    font-size: 0.85rem;
+    /* color: #ffa726; */
+    color: black;
+    max-width: 600px;
+}
+
+.sectionWrapper {
+    opacity: 0;
+    transform: translateY(40px) scale(0.95);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+    margin: 0 auto;
+    /* ensures central alignment */
+    max-width: 1100px;
+    /* same as trainingSection */
+    width: 100%;
+}
+
+.fadeIn {
+    opacity: 1;
+    transform: translateY(0px) scale(1);
+}
+
+.fadeOut {
+    opacity: 0;
+    transform: translateY(40px) scale(0.95);
+}
+
+.domainFlex {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    margin-top: 1.5rem;
+}
+
+.domainItem {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100px;
+    text-align: center;
+    color: #494949;
+}
+
+.domainItem img {
+    width: 40px;
+    height: 40px;
+    margin-bottom: 0.5rem;
+}
+
+.keyPointList {
+    display: flex;
+    gap: 0.75rem;
+    margin-bottom: 1rem;
+    color: #494949;
+}
+
+.keyPointItem {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.95rem;
+}
+
+.bulletIcon {
+    width: 16px;
+    height: 16px;
+}
+
+.modeItemBlock {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.compIcon {
+    max-width: 100px;
+    height: auto;
+}
+
+
+/* RESPONSIVE STYLING */
+
+@media (max-width: 1024px) {
+    .reasons {
+        width: 90%;
+    }
+
+    .trainingSection {
+        flex-direction: column;
+        align-items: center;
+        gap: 2rem;
+    }
+
+    .subHeading {
+        font-size: 2rem;
+        text-align: center;
+    }
+
+    .description {
+        font-size: 1.2rem;
+        text-align: center;
+    }
+
+    .modeItem {
+        width: 100%;
+        grid-template-columns: 1fr;
+        justify-content: center;
+    }
+
+    .textColumn {
+        text-align: center;
+    }
+
+    .keyPointList {
+        flex-direction: column;
+        align-items: flex-start;
+        margin-left: 20%;
+    }
+
+    .importantNote {
+        text-align: center;
+    }
+
+    .verticalLine {
+        display: none;
+        /* Remove vertical line on mobile/tablet */
+    }
+
+    .iconColumn {
+        margin-bottom: 1rem;
+    }
+}
+
+@media (max-width: 600px) {
+    .mainHeading {
+        font-size: 2rem;
+        padding: 3% 1rem;
+    }
+
+    .outlineText {
+        font-size: 2rem;
+        -webkit-text-stroke: 1px #494949;
+    }
+
+    .subHeading {
+        font-size: 1.5rem;
+    }
+
+    .description {
+        font-size: 1rem;
+    }
+
+    .keyPointItem {
+        font-size: 0.85rem;
+    }
+
+    .modeItemBlock {
+        flex-direction: column;
+        gap: 0.25rem;
+    }
+
+    .domainItem {
+        width: 80px;
+    }
+}
