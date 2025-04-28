@@ -13,7 +13,7 @@ const CourseRated = () => {
     <section className={CourseRatedStyles.courseRatedSection}>
       <div className={CourseRatedStyles.container}>
         {/* Left: Rating Cards */}
-        <div className={CourseRatedStyles.leftSection}>
+        {/* <div className={CourseRatedStyles.leftSection}>
           <h2 className={CourseRatedStyles.heading}>Courses Top Rated in:</h2>
           <p className={CourseRatedStyles.subTitle}>
             Discover what our learners say about us
@@ -41,7 +41,7 @@ const CourseRated = () => {
               </div>
             ))}
           </div>
-        </div>
+        </div> */}
 
         {/* Right: YouTube Video */}
         <div className={CourseRatedStyles.rightSection}>
