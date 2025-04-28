@@ -1,42 +1,42 @@
 [
     {
         "name": "Tablespace",
-        "logo": "client_Table space.png"
+        "logo": "client_Table spaceBGR.png"
     },
     {
         "name": "Think Perfect",
-        "logo": "client_Think perfect.jpg"
+        "logo": "client_Think perfectBGR.jpg"
     },
     {
         "name": "FIME",
-        "logo": "client_FIME.png"
+        "logo": "client_FIMEBGR.png"
     },
     {
         "name": "EY India",
-        "logo": "client_EY india.png"
+        "logo": "client_EY indiaBGR.png"
     },
     {
         "name": "CLearTax",
-        "logo": "client_clear tax.jpg"
+        "logo": "client_clear taxBGR.jpg"
     },
     {
         "name": "Kreditstack",
-        "logo": "client_kreditstack.jpg"
+        "logo": "client_kreditstackBGR.jpg"
     },
     {
         "name": "Apollo Health Care",
-        "logo": "client_Apollo.png"
+        "logo": "client_ApolloBGR.png"
     },
     {
         "name": "Social Worth",
-        "logo": "client_Social worth.png"
+        "logo": "client_Social worthBGR.png"
     },
     {
         "name": "Rapidflow",
-        "logo": "client_Rapidflow.png"
+        "logo": "client_RapidflowBGR.png"
     },
     {
         "name": "TekGeminus",
-        "logo": "client_Tekgeminus.jpg"
+        "logo": "client_TekgeminusBGR.png"
     }
 ]

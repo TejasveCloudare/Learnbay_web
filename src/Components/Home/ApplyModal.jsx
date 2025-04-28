@@ -1,5 +1,5 @@
 import React from "react";
-import modalStyles from "./ApplyModal.module.css"; // We'll define this CSS below
+import modalStyles from "./ApplyModal.module.css"; // CSS file
 
 const ApplyModal = ({ showModal, onClose }) => {
   if (!showModal) return null;
@@ -16,23 +16,21 @@ const ApplyModal = ({ showModal, onClose }) => {
         </div>
         <div className={modalStyles.rightSection}>
           <h2>Apply For Counselling</h2>
-          <form className={modalStyles.form}>
-            <input type="text" placeholder="Enter your Full Name *" required />
-            <input type="email" placeholder="Enter your Email *" required />
-            <input type="tel" placeholder="Phone Number *" required />
-            <select required>
-              <option value="">Work Experience *</option>
-              <option value="Fresher">Fresher</option>
-              <option value="1-3 Years">1-3 Years</option>
-              <option value="3+ Years">3+ Years</option>
-            </select>
-            <select required>
-              <option value="">Select Course Preference *</option>
-              <option value="Data Science">Data Science</option>
-              <option value="Web Development">Web Development</option>
-            </select>
-            <button type="submit">Apply For Counselling</button>
-          </form>
+          {/* Replace the form with the Microsoft Form iframe */}
+          <iframe
+            title="Apply for Counselling Form"
+            width="640px"
+            height="480px"
+            src="https://forms.office.com/Pages/ResponsePage.aspx?id=o7rcX-z16ka0yZjUTR1q6iVx3Tnc1MBHsUVprTBizH9URjQ5WFZLRDhLWDVMWkNOMDIxNjdETzkxOS4u&embed=true"
+            frameBorder="0"
+            marginWidth="0"
+            marginHeight="0"
+            style={{ border: "none", maxWidth: "100%", maxHeight: "100vh" }}
+            allowFullScreen
+            webkitallowfullscreen="true"
+            mozallowfullscreen="true"
+            msallowfullscreen="true"
+          ></iframe>
         </div>
         <button onClick={onClose} className={modalStyles.closeButton}>
           ✕

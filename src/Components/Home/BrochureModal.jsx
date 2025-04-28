@@ -1,34 +1,15 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import modalStyles from "./ApplyModal.module.css";
 
 const BrochureModal = ({ showModal, onClose, onDownload }) => {
-  // 🟢 Always call hooks before any conditional return
-  const [formData, setFormData] = useState({
-    fullName: "",
-    email: "",
-    phone: "",
-    experience: "",
-    course: "",
-  });
-
-  const handleChange = (e) => {
-    setFormData({ ...formData, [e.target.name]: e.target.value });
-  };
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    const allFieldsFilled = Object.values(formData).every(
-      (field) => field !== ""
-    );
-    if (allFieldsFilled) {
-      onDownload(); // trigger download
-      onClose(); // close modal
-    } else {
-      alert("Please fill all the fields.");
+  // 🟢 Trigger the download once modal is shown
+  useEffect(() => {
+    if (showModal) {
+      onDownload(); // Automatically trigger the download when the modal opens
     }
-  };
+  }, [showModal, onDownload]);
 
-  // 🟠 Now you can return conditionally
+  // 🛠 Microsoft Form Embed
   if (!showModal) return null;
 
   return (
@@ -37,60 +18,23 @@ const BrochureModal = ({ showModal, onClose, onDownload }) => {
         <div className={modalStyles.leftSection}>
           <img
             src="/modal_sample.png"
-            alt="Counselling"
+            alt="Download Brochure"
             className={modalStyles.modalImage}
           />
         </div>
         <div className={modalStyles.rightSection}>
-          <h2>Apply For Counselling</h2>
-          <form className={modalStyles.form} onSubmit={handleSubmit}>
-            <input
-              name="fullName"
-              type="text"
-              placeholder="Enter your Full Name *"
-              value={formData.fullName}
-              onChange={handleChange}
-              required
-            />
-            <input
-              name="email"
-              type="email"
-              placeholder="Enter your Email *"
-              value={formData.email}
-              onChange={handleChange}
-              required
-            />
-            <input
-              name="phone"
-              type="tel"
-              placeholder="Phone Number *"
-              value={formData.phone}
-              onChange={handleChange}
-              required
-            />
-            <select
-              name="experience"
-              value={formData.experience}
-              onChange={handleChange}
-              required
-            >
-              <option value="">Work Experience *</option>
-              <option value="Fresher">Fresher</option>
-              <option value="1-3 Years">1-3 Years</option>
-              <option value="3+ Years">3+ Years</option>
-            </select>
-            <select
-              name="course"
-              value={formData.course}
-              onChange={handleChange}
-              required
-            >
-              <option value="">Select Course Preference *</option>
-              <option value="Data Science">Data Science</option>
-              <option value="Web Development">Web Development</option>
-            </select>
-            <button type="submit">Apply For Counselling</button>
-          </form>
+          <h2>Download Brochure</h2> {/* 🛠 Changed Heading */}
+          {/* Microsoft Form Embed */}
+          <iframe
+            title="Microsoft Form"
+            src="https://forms.office.com/Pages/ResponsePage.aspx?id=o7rcX-z16ka0yZjUTR1q6iVx3Tnc1MBHsUVprTBizH9URjQ5WFZLRDhLWDVMWkNOMDIxNjdETzkxOS4u"
+            frameBorder="0"
+            style={{
+              width: "100%",
+              height: "500px", // Adjust this to fit your form's height
+              border: "none",
+            }}
+          ></iframe>
         </div>
         <button onClick={onClose} className={modalStyles.closeButton}>
           ✕
