@@ -39,7 +39,7 @@ body {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 1rem;
+    gap: 3rem;
     align-items: center;
     margin-bottom: 0.75rem;
 }
@@ -50,6 +50,7 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
+    opacity: 0;
 }
 
 .companyLogos img {
@@ -57,6 +58,42 @@ body {
     height: 80px;
     object-fit: contain;
     object-position: center;
+    transition: transform 0.3s ease-in-out;
+}
+
+
+/* === Sliding and Zooming Effects === */
+
+.slideIn {
+    animation: slideIn 0.5s ease-out forwards;
+}
+
+@keyframes slideIn {
+    0% {
+        transform: translateY(20px);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.zoomOnHover {
+    transition: transform 0.3s ease, scale 0.3s ease;
+}
+
+.zoomOnHover:hover img {
+    transform: scale(1.2);
+}
+
+
+/* === Hover Effects === */
+
+.companyLogos .logoBox:hover {
+    transform: scale(1.1);
+    transition: transform 0.3s ease;
 }
 
 .hiringText {
@@ -165,82 +202,4 @@ body {
 .pointList li img {
     width: 25px;
     height: 25px;
-}
-
-
-/* === Responsive Design === */
-
-@media screen and (max-width: 1024px) {
-    .comparisonContainer {
-        flex-direction: column;
-        width: 90%;
-    }
-
-    .comparisonColumn {
-        width: 100%;
-        margin-bottom: 1.5rem;
-    }
-
-    .learnbayColumn {
-        order: 2;
-    }
-
-    .othersColumn {
-        order: 3;
-    }
-
-    .lightColumn {
-        order: 1;
-        text-align: start;
-    }
-
-    .title {
-        font-size: 2rem;
-        line-height: 2.5rem;
-    }
-
-    .brand {
-        font-size: 1.125rem;
-    }
-
-    .pointList li {
-        font-size: 0.95rem;
-    }
-}
-
-@media screen and (max-width: 600px) {
-    .logoSection {
-        padding: 1rem;
-    }
-
-    .companyLogos img {
-        height: 30px;
-    }
-
-    .hiringText {
-        font-size: 0.875rem;
-    }
-
-    .title {
-        font-size: 1.75rem;
-        line-height: 2.25rem;
-    }
-
-    .comparisonSection {
-        padding: 1.25rem;
-    }
-
-    .comparisonColumn {
-        padding: 1.25rem 1rem;
-    }
-
-    .pointList li {
-        font-size: 0.875rem;
-        gap: 0.5rem;
-    }
-
-    .pointList li img {
-        width: 20px;
-        height: 20px;
-    }
 }

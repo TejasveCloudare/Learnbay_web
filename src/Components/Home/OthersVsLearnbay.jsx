@@ -15,8 +15,12 @@ const OthersVsLearnbay = () => {
             "boch",
             "deloitte",
             "PWC",
-          ].map((logo) => (
-            <div key={logo} className={otlStyles.logoBox}>
+          ].map((logo, index) => (
+            <div
+              key={logo}
+              className={`${otlStyles.logoBox} ${otlStyles.slideIn} ${otlStyles.zoomOnHover}`}
+              style={{ animationDelay: `${index * 0.1}s` }} // Adds a delay for animation effect
+            >
               <img src={`/${logo}.avif`} alt={logo} />
             </div>
           ))}
