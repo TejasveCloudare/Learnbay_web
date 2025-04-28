@@ -9,9 +9,7 @@
         "background": "linear-gradient(135deg, #ff6f00 0%, #2e2e2e 100%)",
         "logos": [
             "/ibm.png",
-            "/RE1Mu3b.png",
-            "/e and ict.jpg",
-            "/woolf.png"
+            "/RE1Mu3b.png"
         ]
     },
     {
@@ -24,9 +22,7 @@
         "background": "linear-gradient(135deg, #ff7a18 0%, #363636 100%)",
         "logos": [
             "/ibm.png",
-            "/RE1Mu3b.png",
-            "/e and ict.jpg",
-            "/woolf.png"
+            "/RE1Mu3b.png"
         ]
     },
     {
@@ -39,9 +35,7 @@
         "background": "linear-gradient(135deg, #ff914d 0%, #1f1f1f 100%)",
         "logos": [
             "/ibm.png",
-            "/RE1Mu3b.png",
-            "/e and ict.jpg",
-            "/woolf.png"
+            "/RE1Mu3b.png"
         ]
     }
 ]
