@@ -135,7 +135,7 @@ function Header() {
           <Link to="/about" className={headerStyle.navLink}>
             About Us
           </Link>
-          <a
+          {/* <a
             href="https://blogs.cloudare.in/"
             target="_blank"
             rel="noopener noreferrer"
@@ -145,7 +145,7 @@ function Header() {
           </a>
           <Link to="/" className={headerStyle.navLink}>
             ProjectLab
-          </Link>
+          </Link> */}
           <button
             className={headerStyle.applyBtn}
             onClick={() => setModalOpen(true)}
@@ -161,7 +161,7 @@ function Header() {
               <Link to="/about" className={headerStyle.mobileLink}>
                 About Us
               </Link>
-              <a
+              {/* <a
                 href="https://blogs.cloudare.in/"
                 target="_blank"
                 rel="noopener noreferrer"
@@ -175,7 +175,7 @@ function Header() {
                 onClick={() => setMenuOpen(false)}
               >
                 ProjectLab
-              </Link>
+              </Link> */}
               <button
                 className={headerStyle.mobileApplyBtn}
                 onClick={() => {
