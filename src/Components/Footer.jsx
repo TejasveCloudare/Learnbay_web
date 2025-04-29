@@ -1,27 +1,35 @@
 import React, { useEffect, useState } from "react";
 import footerStyles from "./Footer.module.css";
-import { Link } from "react-router-dom";
-import {
-  FaFacebookF,
-  FaLinkedinIn,
-  FaInstagram,
-  FaYoutube,
-} from "react-icons/fa";
+import { Link, useNavigate, useLocation } from "react-router-dom";
+import { FaLinkedinIn, FaInstagram } from "react-icons/fa";
 
 import address from "../../src/Assets/JSON files/addresses.json";
 
 function Footer() {
   const [addresses, setAddresses] = useState([]);
+  const navigate = useNavigate();
+  const location = useLocation();
+
   useEffect(() => {
     setAddresses(address);
   }, []);
 
-  // useEffect(() => {
-  //   fetch("/addresses.json")
-  //     .then((res) => res.json())
-  //     .then((data) => setAddresses(data))
-  //     .catch((err) => console.error("Failed to load addresses:", err));
-  // }, []);
+  const handleScrollToCourses = () => {
+    if (location.pathname === "/") {
+      const section = document.getElementById("cardsSection");
+      if (section) {
+        section.scrollIntoView({ behavior: "smooth" });
+      }
+    } else {
+      navigate("/#cardsSection");
+      setTimeout(() => {
+        const section = document.getElementById("cardsSection");
+        if (section) {
+          section.scrollIntoView({ behavior: "smooth" });
+        }
+      }, 100); // wait for route change
+    }
+  };
 
   return (
     <footer className={footerStyles.footer}>
@@ -47,13 +55,12 @@ function Footer() {
               <Link to="/about">About</Link>
             </li>
             <li>
-              <Link to="/courses">Courses</Link>
-            </li>
-            <li>
-              <Link to="/contact">Contact</Link>
-            </li>
-            <li>
-              <Link to="/careers">Careers</Link>
+              <button
+                onClick={handleScrollToCourses}
+                className={footerStyles.linkButton}
+              >
+                Courses
+              </button>
             </li>
           </ul>
         </div>
@@ -74,17 +81,21 @@ function Footer() {
         <div className={footerStyles.footerColumn}>
           <h4>Follow Us</h4>
           <div className={footerStyles.socialIcons}>
-            <a href="#" aria-label="Facebook">
-              <FaFacebookF />
-            </a>
-            <a href="#" aria-label="LinkedIn">
+            <a
+              href="https://www.linkedin.com/company/edynoor/"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="LinkedIn"
+            >
               <FaLinkedinIn />
             </a>
-            <a href="#" aria-label="Instagram">
+            <a
+              href="https://www.instagram.com/edynoorglobal?igsh=YzE1dDM0am4xeG1u"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Instagram"
+            >
               <FaInstagram />
-            </a>
-            <a href="#" aria-label="YouTube">
-              <FaYoutube />
             </a>
           </div>
         </div>
